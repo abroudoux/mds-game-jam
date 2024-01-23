@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0ea6cbukt3v5"
-path="res://.godot/imported/rocket.png-529bc9b03b00428c86c7dac1919b6376.ctex"
+uid="uid://bn0a15vbb6ofy"
+path="res://.godot/imported/starship_green_o.png-ff576fb343de20bf6bd845f6c0d0ec6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rocket/rocket.png"
-dest_files=["res://.godot/imported/rocket.png-529bc9b03b00428c86c7dac1919b6376.ctex"]
+source_file="res://assets/rocket/starship_green_o.png"
+dest_files=["res://.godot/imported/starship_green_o.png-ff576fb343de20bf6bd845f6c0d0ec6f.ctex"]
 
 [params]
 

@@ -1,34 +1,59 @@
-[gd_scene load_steps=5 format=3 uid="uid://c22jkjlfunchi"]
+[gd_scene load_steps=8 format=3 uid="uid://c22jkjlfunchi"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ta2re"]
-[ext_resource type="Texture2D" uid="uid://bqlxou4tgoi5w" path="res://assets/rocket/starship_green.png" id="2_ao0v3"]
+[ext_resource type="Texture2D" uid="uid://dxb6xx0jvhoa4" path="res://assets/rocket/starship_greeen_s.png" id="2_j8d6g"]
+[ext_resource type="Texture2D" uid="uid://bn0a15vbb6ofy" path="res://assets/rocket/starship_green_o.png" id="3_bxhkk"]
+[ext_resource type="Texture2D" uid="uid://dlpgwd7qlvw8u" path="res://assets/rocket/starship_green_e.png" id="4_okpvu"]
+[ext_resource type="Texture2D" uid="uid://cyfcml4fbusop" path="res://assets/rocket/starship_green_n.png" id="5_uifgh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v5duu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ao0v3")
+"texture": ExtResource("2_j8d6g")
 }],
 "loop": true,
-"name": &"default",
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bxhkk")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_okpvu")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_uifgh")
+}],
+"loop": true,
+"name": &"up",
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ggji6"]
-radius = 7.0
-height = 14.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g31ny"]
 
 [node name="player" type="Area2D"]
 script = ExtResource("1_ta2re")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-rotation = 0.785398
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.01, 0.01)
 sprite_frames = SubResource("SpriteFrames_v5duu")
+animation = &"down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_ggji6")
+shape = SubResource("CapsuleShape2D_g31ny")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
