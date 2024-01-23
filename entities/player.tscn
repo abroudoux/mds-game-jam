@@ -18,8 +18,8 @@ animations = [{
 radius = 9.0
 height = 48.0
 
-[node name="Player" type="Area2D"]
-position = Vector2(-2, 0)
+[node name="player" type="Area2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("1_ta2re")
 metadata/_edit_group_ = true
 
