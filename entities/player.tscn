@@ -1,25 +1,24 @@
 [gd_scene load_steps=5 format=3 uid="uid://c22jkjlfunchi"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ta2re"]
-[ext_resource type="Texture2D" uid="uid://c0ea6cbukt3v5" path="res://assets/rocket/rocket.png" id="1_vrovq"]
+[ext_resource type="Texture2D" uid="uid://bqlxou4tgoi5w" path="res://assets/rocket/starship_green.png" id="2_ao0v3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v5duu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_vrovq")
+"texture": ExtResource("2_ao0v3")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7g63p"]
-radius = 9.0
-height = 48.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ggji6"]
+radius = 7.0
+height = 14.0
 
 [node name="player" type="Area2D"]
-position = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("1_ta2re")
 metadata/_edit_group_ = true
 
@@ -30,6 +29,6 @@ sprite_frames = SubResource("SpriteFrames_v5duu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_7g63p")
+shape = SubResource("CapsuleShape2D_ggji6")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

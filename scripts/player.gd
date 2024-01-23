@@ -2,12 +2,8 @@ extends Area2D
 
 @export var speed = 400
 var screen_size
-signal hit
-
-var camera : Camera2D
 
 func _ready():
-	camera = $camera
 	screen_size = get_viewport_rect().size
 	
 func _process(delta):
