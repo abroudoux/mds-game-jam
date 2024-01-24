@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://c22jkjlfunchi"]
+[gd_scene load_steps=12 format=3 uid="uid://c22jkjlfunchi"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ta2re"]
 [ext_resource type="Texture2D" uid="uid://dxb6xx0jvhoa4" path="res://assets/rocket/starship_greeen_s.png" id="2_j8d6g"]
+[ext_resource type="Texture2D" uid="uid://cyhn7lktlxbkl" path="res://assets/rocket/starship_green_so.png" id="3_a1tgp"]
 [ext_resource type="Texture2D" uid="uid://bn0a15vbb6ofy" path="res://assets/rocket/starship_green_o.png" id="3_bxhkk"]
+[ext_resource type="Texture2D" uid="uid://cgx1qodxxw2ts" path="res://assets/rocket/startship_green_se.png" id="4_kppmn"]
 [ext_resource type="Texture2D" uid="uid://dlpgwd7qlvw8u" path="res://assets/rocket/starship_green_e.png" id="4_okpvu"]
 [ext_resource type="Texture2D" uid="uid://cyfcml4fbusop" path="res://assets/rocket/starship_green_n.png" id="5_uifgh"]
+[ext_resource type="Texture2D" uid="uid://cv4cqt88pox2c" path="res://assets/rocket/starship_green_no.png" id="8_uusj5"]
+[ext_resource type="Texture2D" uid="uid://bcqk3g3w26lil" path="res://assets/rocket/starship_green_ne.png" id="9_6crrx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v5duu"]
 animations = [{
@@ -14,6 +18,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a1tgp")
+}],
+"loop": true,
+"name": &"down_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kppmn")
+}],
+"loop": true,
+"name": &"down_right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -39,6 +59,22 @@ animations = [{
 "loop": true,
 "name": &"up",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_uusj5")
+}],
+"loop": true,
+"name": &"up_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_6crrx")
+}],
+"loop": true,
+"name": &"up_right",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g31ny"]
@@ -50,7 +86,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.01, 0.01)
 sprite_frames = SubResource("SpriteFrames_v5duu")
-animation = &"down"
+animation = &"down_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
