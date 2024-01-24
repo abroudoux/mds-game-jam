@@ -27,11 +27,14 @@ func _process(delta):
 	position = position.clamp(Vector2.ZERO, screen_size)
 
 		
-	if velocity.x != 0:
+	if velocity.x != 0 or velocity.y != 0:
 		$AnimatedSprite2D.flip_h = velocity.x < 0
-		$AnimatedSprite2D.flip_v = false
-		$AnimatedSprite2D.animation = "left" if velocity.x < 0 else "right"
-	elif velocity.y != 0:
 		$AnimatedSprite2D.flip_v = velocity.y > 0
-		$AnimatedSprite2D.animation = "up" if velocity.y < 0 else "down"
+
+	if velocity.x != 0 and velocity.y != 0:
+		$AnimatedSprite2D.animation = "up_right"
+	elif velocity.x != 0:
+		$AnimatedSprite2D.animation = "right"
+	elif velocity.y != 0:
+		$AnimatedSprite2D.animation = "up"
 
