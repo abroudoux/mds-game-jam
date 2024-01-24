@@ -42,7 +42,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_vy53r"]
 radius = 96.3328
 
-[node name="Gj" type="Area2D"]
+[node name="gj" type="Area2D"]
 position = Vector2(728, 1048)
 script = ExtResource("1_rq6qk")
 metadata/_edit_group_ = true
@@ -51,6 +51,8 @@ metadata/_edit_group_ = true
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_eciab")
 animation = &"capture"
+frame = 4
+speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vy53r")

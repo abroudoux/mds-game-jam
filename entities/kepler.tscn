@@ -49,7 +49,7 @@ scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_f4nxv")
 animation = &"capture"
 frame = 3
-speed_scale = 4.0
+speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vacpl")
