@@ -1,13 +1,19 @@
 extends TileMap
 
-@onready var PlayerNode : Area2D = get_node("Player")
-@onready var KeplerNode : Area2D = get_node("Kepler")
+@onready var player_node : Area2D = get_node("player");
+@onready var kepler_node : Area2D = get_node("kepler");
+@onready var wasp_node : Area2D = get_node("wasp"); 
+@onready var score_label : Label = get_node("score_label");
+
+var score = 0
 
 func _process(_delta):
 	pass
 
 func _ready():
-	PlayerNode.connect("player_body_entered", self.change_kepler_animation)
+	if score_label:
+		player_node.connect("planet_body_entered", self._on_planet_captured);
+		score_label.update_score(50);
 
-func change_kepler_animation():
-	KeplerNode.on_capture();
+func _on_planet_captured():
+	kepler_node._on_capture()

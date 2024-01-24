@@ -1,11 +1,10 @@
 extends Area2D
 
 @export var speed = 300
-@export var interacter : Node2D
 
 var screen_size
 
-signal player_body_entered
+signal planet_body_entered
 
 func start(pos):
 	position = pos
@@ -19,12 +18,16 @@ func _process(delta):
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
+		print("player is ready")
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
+		print("player is ready")
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
+		print("player is ready")
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
+		print("player is ready")
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -41,11 +44,10 @@ func _process(delta):
 
 	if velocity.x != 0 and velocity.y != 0:
 		$AnimatedSprite2D.animation = "up_right"
-		print("animation vers le haut !!!")
 	elif velocity.x != 0:
 		$AnimatedSprite2D.animation = "right"
 	elif velocity.y != 0:
 		$AnimatedSprite2D.animation = "up"
 
-func _on_body_entered(body):
-	emit_signal("player_body_entered", body)
+func _on_planet_body_entered(body):
+	emit_signal("planet_body_entered", body)

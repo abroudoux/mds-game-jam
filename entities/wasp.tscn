@@ -28,7 +28,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"capture",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -42,7 +42,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_jq1xb"]
 radius = 88.3629
 
-[node name="Wasp" type="Area2D"]
+[node name="wasp" type="Area2D"]
 position = Vector2(1440, 264)
 script = ExtResource("1_tk5dd")
 metadata/_edit_group_ = true
@@ -51,6 +51,7 @@ metadata/_edit_group_ = true
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_bs382")
 animation = &"capture"
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jq1xb")

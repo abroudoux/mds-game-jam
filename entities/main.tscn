@@ -112,20 +112,20 @@ position = Vector2(2488.06, 1350.11)
 scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
 
-[node name="Kepler" parent="." instance=ExtResource("3_xorpa")]
+[node name="kepler" parent="." instance=ExtResource("3_xorpa")]
 position = Vector2(984, 592)
 
-[node name="Gj" parent="." instance=ExtResource("5_vwbji")]
+[node name="gj" parent="." instance=ExtResource("5_vwbji")]
 
-[node name="Wasp" parent="." instance=ExtResource("6_xuno2")]
+[node name="wasp" parent="." instance=ExtResource("6_xuno2")]
 
-[node name="Player" parent="." instance=ExtResource("2_mjp3b")]
+[node name="player" parent="." instance=ExtResource("2_mjp3b")]
 position = Vector2(1256, 704)
 
-[node name="camera" type="Camera2D" parent="Player"]
+[node name="camera" type="Camera2D" parent="player"]
 zoom = Vector2(2.5, 2.5)
 
-[node name="UserInterface" type="Control" parent="Player/camera"]
+[node name="UserInterface" type="Control" parent="player/camera"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -1256.0
@@ -133,7 +133,7 @@ offset_top = -704.0
 offset_right = -1216.0
 offset_bottom = -664.0
 
-[node name="ScoreLabel" type="Label" parent="Player/camera/UserInterface"]
+[node name="score_label" type="Label" parent="player/camera/UserInterface"]
 layout_mode = 0
 offset_left = 872.0
 offset_top = 456.0
