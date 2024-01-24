@@ -1,34 +1,214 @@
-[gd_scene load_steps=3 format=3 uid="uid://c178y0io7x4q"]
+[gd_scene load_steps=5 format=3 uid="uid://c178y0io7x4q"]
 
-[ext_resource type="Texture2D" uid="uid://d13namkmci814" path="res://assets/background/background-stars.png" id="1_pdjrt"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_oqs5a"]
 [ext_resource type="PackedScene" uid="uid://c22jkjlfunchi" path="res://entities/player.tscn" id="2_mjp3b"]
+[ext_resource type="Texture2D" uid="uid://bjhj8serd04k7" path="res://assets/background/background.png" id="2_u8t8o"]
+[ext_resource type="PackedScene" uid="uid://b3bkvhb81fmbm" path="res://entities/kepler.tscn" id="3_xorpa"]
 
 [node name="main" type="TileMap"]
 format = 2
+script = ExtResource("1_oqs5a")
 
-[node name="TextureRect4" type="TextureRect" parent="."]
-offset_left = 1256.0
-offset_top = 704.0
-offset_right = 2512.0
-offset_bottom = 1408.0
-texture = ExtResource("1_pdjrt")
-
-[node name="TextureRect3" type="TextureRect" parent="."]
-offset_top = 704.0
-offset_right = 1256.0
-offset_bottom = 1408.0
-texture = ExtResource("1_pdjrt")
+[node name="Timer" type="Timer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1256.0
-offset_bottom = 704.0
-texture = ExtResource("1_pdjrt")
+offset_right = 841.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = 1256.0
-offset_right = 2512.0
-offset_bottom = 704.0
-texture = ExtResource("1_pdjrt")
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 841.0
+offset_right = 1682.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = 841.0
+offset_right = 1682.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = -1682.0
+offset_top = 832.0
+offset_right = -841.0
+offset_bottom = 1664.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect/TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = 841.0
+offset_right = 1682.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect/TextureRect/TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = 841.0
+offset_right = 1682.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = -2480.0
+offset_right = -1639.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect4"]
+layout_mode = 0
+offset_left = 841.0
+offset_right = 1682.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect4/TextureRect"]
+layout_mode = 0
+offset_left = 841.0
+offset_right = 1682.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect4/TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = -1682.0
+offset_top = 832.0
+offset_right = -841.0
+offset_bottom = 1664.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect4/TextureRect/TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = 841.0
+offset_right = 1682.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect4/TextureRect/TextureRect/TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = 841.0
+offset_right = 1682.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = -2480.0
+offset_top = -1664.0
+offset_right = -1639.0
+offset_bottom = -832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect3"]
+layout_mode = 0
+offset_left = 841.0
+offset_right = 1682.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect3/TextureRect"]
+layout_mode = 0
+offset_left = 841.0
+offset_right = 1682.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect3/TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = -1682.0
+offset_top = 832.0
+offset_right = -841.0
+offset_bottom = 1664.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect3/TextureRect/TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = 841.0
+offset_right = 1682.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect3/TextureRect/TextureRect/TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = 841.0
+offset_right = 1682.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -1656.0
+offset_right = 849.0
+offset_bottom = -824.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect2"]
+layout_mode = 0
+offset_left = 841.0
+offset_right = 1682.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect2/TextureRect"]
+layout_mode = 0
+offset_left = 841.0
+offset_right = 1682.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect2/TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = -1682.0
+offset_top = 832.0
+offset_right = -841.0
+offset_bottom = 1664.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect2/TextureRect/TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = 841.0
+offset_right = 1682.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect2/TextureRect/TextureRect/TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = 841.0
+offset_right = 1682.0
+offset_bottom = 832.0
+texture = ExtResource("2_u8t8o")
+expand_mode = 1
+
+[node name="kepler" parent="." instance=ExtResource("3_xorpa")]
+position = Vector2(360, 296)
 
 [node name="player" parent="." instance=ExtResource("2_mjp3b")]
 position = Vector2(1256, 704)
@@ -36,4 +216,4 @@ position = Vector2(1256, 704)
 [node name="camera" type="Camera2D" parent="player"]
 zoom = Vector2(2.5, 2.5)
 
-[node name="Timer" type="Timer" parent="."]
+[connection signal="hit" from="player" to="kepler" method="_on_player_hit"]
