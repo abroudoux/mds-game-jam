@@ -1,12 +1,11 @@
 extends Area2D
 
-@export var speed = 150
+@export var speed = 300
 @export var interacter : Node2D
-@export var interaction_action : StringName = "interact"
 
 var screen_size
 
-signal hit
+signal player_body_entered
 
 func start(pos):
 	position = pos
@@ -42,12 +41,11 @@ func _process(delta):
 
 	if velocity.x != 0 and velocity.y != 0:
 		$AnimatedSprite2D.animation = "up_right"
+		print("animation vers le haut !!!")
 	elif velocity.x != 0:
 		$AnimatedSprite2D.animation = "right"
 	elif velocity.y != 0:
 		$AnimatedSprite2D.animation = "up"
 
 func _on_body_entered(body):
-	hide()
-	hit.emit()
-	$CollisionShape2D.set_deferred("disabled", true)
+	emit_signal("player_body_entered", body)

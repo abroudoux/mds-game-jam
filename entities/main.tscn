@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c178y0io7x4q"]
+[gd_scene load_steps=8 format=3 uid="uid://c178y0io7x4q"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_oqs5a"]
 [ext_resource type="PackedScene" uid="uid://c22jkjlfunchi" path="res://entities/player.tscn" id="2_mjp3b"]
@@ -6,12 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://b3bkvhb81fmbm" path="res://entities/kepler.tscn" id="3_xorpa"]
 [ext_resource type="PackedScene" uid="uid://bjrk0hmogd0ox" path="res://entities/gj.tscn" id="5_vwbji"]
 [ext_resource type="PackedScene" uid="uid://bq0sp7d8sv2cy" path="res://entities/wasp.tscn" id="6_xuno2"]
+[ext_resource type="Script" path="res://scripts/score_label.gd" id="7_5g5tm"]
 
 [node name="main" type="TileMap"]
 format = 2
 script = ExtResource("1_oqs5a")
-
-[node name="Timer" type="Timer" parent="."]
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(120, -24)
@@ -114,15 +113,7 @@ scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
 
 [node name="Kepler" parent="." instance=ExtResource("3_xorpa")]
-position = Vector2(360, 296)
-
-[node name="ScoreTimer" type="Timer" parent="."]
-
-[node name="StartTimer" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
-
-[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(984, 592)
 
 [node name="Gj" parent="." instance=ExtResource("5_vwbji")]
 
@@ -134,4 +125,19 @@ position = Vector2(1256, 704)
 [node name="camera" type="Camera2D" parent="Player"]
 zoom = Vector2(2.5, 2.5)
 
-[connection signal="hit" from="Player" to="Kepler" method="_on_player_hit"]
+[node name="UserInterface" type="Control" parent="Player/camera"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1256.0
+offset_top = -704.0
+offset_right = -1216.0
+offset_bottom = -664.0
+
+[node name="ScoreLabel" type="Label" parent="Player/camera/UserInterface"]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 456.0
+offset_right = 937.0
+offset_bottom = 479.0
+text = "Score : 0"
+script = ExtResource("7_5g5tm")
