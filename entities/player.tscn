@@ -78,8 +78,10 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g31ny"]
+radius = 39.0
+height = 78.0
 
-[node name="player" type="Area2D" groups=["player"]]
+[node name="Player" type="Area2D" groups=["player"]]
 script = ExtResource("1_ta2re")
 metadata/_edit_group_ = true
 

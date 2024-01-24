@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c178y0io7x4q"]
+[gd_scene load_steps=7 format=3 uid="uid://c178y0io7x4q"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_oqs5a"]
 [ext_resource type="PackedScene" uid="uid://c22jkjlfunchi" path="res://entities/player.tscn" id="2_mjp3b"]
 [ext_resource type="Texture2D" uid="uid://bjhj8serd04k7" path="res://assets/background/background.png" id="2_u8t8o"]
 [ext_resource type="PackedScene" uid="uid://b3bkvhb81fmbm" path="res://entities/kepler.tscn" id="3_xorpa"]
+[ext_resource type="PackedScene" uid="uid://bjrk0hmogd0ox" path="res://entities/gj.tscn" id="5_vwbji"]
+[ext_resource type="PackedScene" uid="uid://bq0sp7d8sv2cy" path="res://entities/wasp.tscn" id="6_xuno2"]
 
 [node name="main" type="TileMap"]
 format = 2
@@ -11,209 +13,125 @@ script = ExtResource("1_oqs5a")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 841.0
-offset_bottom = 832.0
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(120, -24)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect"]
-layout_mode = 0
-offset_left = 841.0
-offset_right = 1682.0
-offset_bottom = 832.0
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(712, -24)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect"]
-layout_mode = 0
-offset_left = 841.0
-offset_right = 1682.0
-offset_bottom = 832.0
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(1304, -24)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect/TextureRect"]
-layout_mode = 0
-offset_left = -1682.0
-offset_top = 832.0
-offset_right = -841.0
-offset_bottom = 1664.0
+[node name="Background4" type="Sprite2D" parent="."]
+position = Vector2(1896, -24)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect/TextureRect/TextureRect"]
-layout_mode = 0
-offset_left = 841.0
-offset_right = 1682.0
-offset_bottom = 832.0
+[node name="Background5" type="Sprite2D" parent="."]
+position = Vector2(2488, -24)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect/TextureRect/TextureRect/TextureRect"]
-layout_mode = 0
-offset_left = 841.0
-offset_right = 1682.0
-offset_bottom = 832.0
+[node name="Background6" type="Sprite2D" parent="."]
+position = Vector2(120.063, 434.115)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect4" type="TextureRect" parent="TextureRect"]
-layout_mode = 0
-offset_left = -2480.0
-offset_right = -1639.0
-offset_bottom = 832.0
+[node name="Background7" type="Sprite2D" parent="."]
+position = Vector2(712.063, 434.115)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect4"]
-layout_mode = 0
-offset_left = 841.0
-offset_right = 1682.0
-offset_bottom = 832.0
+[node name="Background8" type="Sprite2D" parent="."]
+position = Vector2(1304.06, 434.115)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect4/TextureRect"]
-layout_mode = 0
-offset_left = 841.0
-offset_right = 1682.0
-offset_bottom = 832.0
+[node name="Background9" type="Sprite2D" parent="."]
+position = Vector2(1896.06, 434.115)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect4/TextureRect/TextureRect"]
-layout_mode = 0
-offset_left = -1682.0
-offset_top = 832.0
-offset_right = -841.0
-offset_bottom = 1664.0
+[node name="Background10" type="Sprite2D" parent="."]
+position = Vector2(2488.06, 434.115)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect4/TextureRect/TextureRect/TextureRect"]
-layout_mode = 0
-offset_left = 841.0
-offset_right = 1682.0
-offset_bottom = 832.0
+[node name="Background11" type="Sprite2D" parent="."]
+position = Vector2(120.063, 892.115)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect4/TextureRect/TextureRect/TextureRect/TextureRect"]
-layout_mode = 0
-offset_left = 841.0
-offset_right = 1682.0
-offset_bottom = 832.0
+[node name="Background12" type="Sprite2D" parent="."]
+position = Vector2(712.063, 892.115)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="TextureRect"]
-layout_mode = 0
-offset_left = -2480.0
-offset_top = -1664.0
-offset_right = -1639.0
-offset_bottom = -832.0
+[node name="Background13" type="Sprite2D" parent="."]
+position = Vector2(1304.06, 892.115)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect3"]
-layout_mode = 0
-offset_left = 841.0
-offset_right = 1682.0
-offset_bottom = 832.0
+[node name="Background14" type="Sprite2D" parent="."]
+position = Vector2(1896.06, 892.115)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect3/TextureRect"]
-layout_mode = 0
-offset_left = 841.0
-offset_right = 1682.0
-offset_bottom = 832.0
+[node name="Background15" type="Sprite2D" parent="."]
+position = Vector2(2488.06, 892.115)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect3/TextureRect/TextureRect"]
-layout_mode = 0
-offset_left = -1682.0
-offset_top = 832.0
-offset_right = -841.0
-offset_bottom = 1664.0
+[node name="Background16" type="Sprite2D" parent="."]
+position = Vector2(120.063, 1350.11)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect3/TextureRect/TextureRect/TextureRect"]
-layout_mode = 0
-offset_left = 841.0
-offset_right = 1682.0
-offset_bottom = 832.0
+[node name="Background17" type="Sprite2D" parent="."]
+position = Vector2(712.063, 1350.11)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect3/TextureRect/TextureRect/TextureRect/TextureRect"]
-layout_mode = 0
-offset_left = 841.0
-offset_right = 1682.0
-offset_bottom = 832.0
+[node name="Background18" type="Sprite2D" parent="."]
+position = Vector2(1304.06, 1350.11)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = -1656.0
-offset_right = 849.0
-offset_bottom = -824.0
+[node name="Background19" type="Sprite2D" parent="."]
+position = Vector2(1896.06, 1350.11)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect2"]
-layout_mode = 0
-offset_left = 841.0
-offset_right = 1682.0
-offset_bottom = 832.0
+[node name="Background20" type="Sprite2D" parent="."]
+position = Vector2(2488.06, 1350.11)
+scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
-expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect2/TextureRect"]
-layout_mode = 0
-offset_left = 841.0
-offset_right = 1682.0
-offset_bottom = 832.0
-texture = ExtResource("2_u8t8o")
-expand_mode = 1
-
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect2/TextureRect/TextureRect"]
-layout_mode = 0
-offset_left = -1682.0
-offset_top = 832.0
-offset_right = -841.0
-offset_bottom = 1664.0
-texture = ExtResource("2_u8t8o")
-expand_mode = 1
-
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect2/TextureRect/TextureRect/TextureRect"]
-layout_mode = 0
-offset_left = 841.0
-offset_right = 1682.0
-offset_bottom = 832.0
-texture = ExtResource("2_u8t8o")
-expand_mode = 1
-
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect2/TextureRect/TextureRect/TextureRect/TextureRect"]
-layout_mode = 0
-offset_left = 841.0
-offset_right = 1682.0
-offset_bottom = 832.0
-texture = ExtResource("2_u8t8o")
-expand_mode = 1
-
-[node name="kepler" parent="." instance=ExtResource("3_xorpa")]
+[node name="Kepler" parent="." instance=ExtResource("3_xorpa")]
 position = Vector2(360, 296)
 
-[node name="player" parent="." instance=ExtResource("2_mjp3b")]
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Marker2D" parent="."]
+
+[node name="Gj" parent="." instance=ExtResource("5_vwbji")]
+
+[node name="Wasp" parent="." instance=ExtResource("6_xuno2")]
+
+[node name="Player" parent="." instance=ExtResource("2_mjp3b")]
 position = Vector2(1256, 704)
 
-[node name="camera" type="Camera2D" parent="player"]
+[node name="camera" type="Camera2D" parent="Player"]
 zoom = Vector2(2.5, 2.5)
 
-[connection signal="hit" from="player" to="kepler" method="_on_player_hit"]
+[connection signal="hit" from="Player" to="Kepler" method="_on_player_hit"]
