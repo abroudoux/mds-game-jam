@@ -26,6 +26,7 @@ func _ready():
 	audio_stream_player.play();
 	restart_game_label.connect("restart_game", restart)
 	if not game_over:
+		player_node.position = Vector2(get_viewport_rect().size.x / 2, get_viewport_rect().size.y / 2)
 		player_node.show();
 		kepler_node.show();
 		wasp_node.show();
@@ -92,106 +93,46 @@ func _on_planet_entered(planet_name):
 	if not game_over:
 		match planet_name:
 			"kepler":
-				_on_planet_kepler_captured();
+				kepler_node._on_capture();
 			"wasp":
-				_on_planet_wasp_captured();
+				wasp_node._on_capture();
 			"gj":
-				_on_planet_gj_captured();
+				gj_node._on_capture();
 			"mmvc":
-				_on_planet_mmvc_captured();
+				mmvc_node._on_capture();
 			"gliese":
-				_on_planet_gliese_captured();
+				gliese_node._on_capture();
 			"titan":
-				_on_planet_titan_captured();
+				titan_node._on_capture();
 			"corot":
-				_on_planet_corot_captured();
+				corot_node._on_capture();
 			"hades":
-				_on_planet_hades_captured();
+				hades_node._on_capture();
 			"lrtq":
-				_on_planet_lrtq_captured();
+				lrtq_node._on_capture();
 			"trappist":
-				_on_planet_trappist_captured();
+				trappist_node._on_capture();
 
 func _on_planet_exited(planet_name):
 	if not game_over:
 		match planet_name:
 			"kepler":
-				_on_planet_kepler_exited()
+				kepler_node._on_player_exited();
 			"wasp":
-				_on_planet_wasp_exited()
+				wasp_node._on_player_exited();
 			"gj":
-				_on_planet_gj_exited()
+				gj_node._on_player_exited();
 			"mmvc":
-				_on_planet_mmvc_exited();
+				mmvc_node._on_player_exited();
 			"gliese":
-				_on_planet_gliese_exited();
+				gliese_node._on_player_exited();
 			"titan":
-				_on_planet_titan_exited();
+				titan_node._on_player_exited();
 			"corot":
-				_on_planet_corot_exited();
+				corot_node._on_player_exited();
 			"hades":
-				_on_planet_hades_exited();
+				hades_node._on_player_exited();
 			"lrtq":
-				_on_planet_lrtq_exited();
+				lrtq_node._on_player_exited();
 			"trappist":
-				_on_planet_trappist_exited();
-
-func _on_planet_kepler_captured():
-	kepler_node._on_capture();
-	
-func _on_planet_kepler_exited():
-	kepler_node._on_player_exited();
-	
-func _on_planet_wasp_captured():
-	wasp_node._on_capture();
-	
-func _on_planet_wasp_exited():
-	wasp_node._on_player_exited();
-	
-func _on_planet_gj_captured():
-	gj_node._on_capture();
-	
-func _on_planet_gj_exited():
-	gj_node._on_player_exited();
-	
-func _on_planet_mmvc_captured():
-	mmvc_node._on_capture();
-	
-func _on_planet_mmvc_exited():
-	mmvc_node._on_player_exited();
-	
-func _on_planet_gliese_captured():
-	gliese_node._on_capture();
-	
-func _on_planet_gliese_exited():
-	gliese_node._on_player_exited();
-	
-func _on_planet_titan_captured():
-	titan_node._on_capture();
-	
-func _on_planet_titan_exited():
-	titan_node._on_player_exited();
-	
-func _on_planet_corot_captured():
-	corot_node._on_capture();
-	
-func _on_planet_corot_exited():
-	corot_node._on_player_exited();
-	
-func _on_planet_hades_captured():
-	hades_node._on_capture();
-	
-func _on_planet_hades_exited():
-	hades_node._on_player_exited();
-	
-func _on_planet_lrtq_captured():
-	lrtq_node._on_capture();
-	
-func _on_planet_lrtq_exited():
-	lrtq_node._on_player_exited();
-	
-func _on_planet_trappist_captured():
-	trappist_node._on_capture();
-	
-func _on_planet_trappist_exited():
-	trappist_node._on_player_exited();
+				trappist_node._on_player_exited();
