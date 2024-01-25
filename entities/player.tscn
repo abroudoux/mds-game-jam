@@ -78,8 +78,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g31ny"]
-radius = 39.0
-height = 78.0
+radius = 17.0
+height = 36.0
 
 [node name="player" type="Area2D" groups=["player"]]
 script = ExtResource("1_ta2re")
@@ -93,5 +93,3 @@ animation = &"down_right"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_g31ny")
-
-[connection signal="body_entered" from="." to="." method="_on_planet_body_entered"]

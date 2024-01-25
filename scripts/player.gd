@@ -12,6 +12,7 @@ func start(pos):
 	$CollisionShape2D.disabled = false
 
 func _ready():
+	connect("area_entered", _on_planet_body_entered)
 	screen_size = get_viewport_rect().size
 	
 func _process(delta):
@@ -49,5 +50,6 @@ func _process(delta):
 	elif velocity.y != 0:
 		$AnimatedSprite2D.animation = "up"
 
-func _on_planet_body_entered(body):
-	emit_signal("planet_body_entered", body)
+func _on_planet_body_entered():
+	print("azeaezzzz")
+	emit_signal("planet_body_entered")

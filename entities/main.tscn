@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c178y0io7x4q"]
+[gd_scene load_steps=9 format=3 uid="uid://c178y0io7x4q"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_oqs5a"]
 [ext_resource type="PackedScene" uid="uid://c22jkjlfunchi" path="res://entities/player.tscn" id="2_mjp3b"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bjrk0hmogd0ox" path="res://entities/gj.tscn" id="5_vwbji"]
 [ext_resource type="PackedScene" uid="uid://bq0sp7d8sv2cy" path="res://entities/wasp.tscn" id="6_xuno2"]
 [ext_resource type="Script" path="res://scripts/score_label.gd" id="7_5g5tm"]
+
+[sub_resource type="Theme" id="Theme_e2h7d"]
 
 [node name="main" type="TileMap"]
 format = 2
@@ -139,5 +141,6 @@ offset_left = 872.0
 offset_top = 456.0
 offset_right = 937.0
 offset_bottom = 479.0
+theme = SubResource("Theme_e2h7d")
 text = "Score : 0"
 script = ExtResource("7_5g5tm")
