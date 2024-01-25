@@ -4,7 +4,7 @@ extends Area2D
 
 var screen_size
 
-signal planet_body_entered
+signal planet_kepler_body_entered
 
 func start(pos):
 	position = pos
@@ -12,23 +12,19 @@ func start(pos):
 	$CollisionShape2D.disabled = false
 
 func _ready():
-	connect("area_entered", _on_planet_body_entered)
+	connect("area_entered", _on_planet_kepler_body_entered)
 	screen_size = get_viewport_rect().size
 	
 func _process(delta):
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
-		print("player is ready")
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
-		print("player is ready")
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
-		print("player is ready")
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
-		print("player is ready")
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -50,6 +46,5 @@ func _process(delta):
 	elif velocity.y != 0:
 		$AnimatedSprite2D.animation = "up"
 
-func _on_planet_body_entered():
-	print("azeaezzzz")
-	emit_signal("planet_body_entered")
+func _on_planet_kepler_body_entered(_body):
+	emit_signal("planet_kepler_body_entered")

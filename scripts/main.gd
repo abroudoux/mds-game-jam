@@ -11,16 +11,14 @@ func _process(_delta):
 	pass
 
 func _ready():
-	print("azeaez")
 	score_label = preload("res://scripts/score_label.gd").new()
 	score_label.update_score(str(50));
 	
-	player_node.planet_body_entered.connect( _on_planet_kepler_captured);
+	player_node.planet_kepler_body_entered.connect(_on_planet_kepler_captured);
 	#player_node.planet_body_entered.connect( _on_planet_wasp_captured);
 	#player_node.planet_body_entered.connect( _on_planet_gj_captured);
 
 func _on_planet_kepler_captured():
-	print("kepler")
 	kepler_node._on_capture();
 
 func _on_planet_wasp_captured():
