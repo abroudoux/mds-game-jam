@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://08xjbq2tdidf"]
+
+[ext_resource type="Texture2D" uid="uid://b17bdct5euuiq" path="res://assets/planets/gliese/gliese_1.png" id="1_r1xcg"]
+[ext_resource type="Script" path="res://scripts/gliese.gd" id="1_ybh0b"]
+[ext_resource type="Texture2D" uid="uid://c8ghi0pwpaq0c" path="res://assets/planets/gliese/gliese_2.png" id="2_ea50k"]
+[ext_resource type="Texture2D" uid="uid://c1rukmv3kkn73" path="res://assets/planets/gliese/gliese_3.png" id="3_ay4hy"]
+[ext_resource type="Texture2D" uid="uid://cil6w7m4ilwxx" path="res://assets/planets/gliese/gliese_4.png" id="4_c5yvl"]
+[ext_resource type="Texture2D" uid="uid://ctw464v8bo8ki" path="res://assets/planets/gliese/gliese_flag.png" id="5_au0hi"]
+[ext_resource type="Texture2D" uid="uid://bcmgcs4qa40dy" path="res://assets/planets/gliese/gliese.png" id="6_tlk5w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_no3g4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r1xcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ea50k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ay4hy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c5yvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_au0hi")
+}],
+"loop": false,
+"name": &"capture",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tlk5w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jghml"]
+radius = 186.762
+
+[node name="gliese" type="Area2D"]
+position = Vector2(1656, 296)
+script = ExtResource("1_ybh0b")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_no3g4")
+animation = &"capture"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jghml")

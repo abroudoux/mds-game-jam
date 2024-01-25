@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c178y0io7x4q"]
+[gd_scene load_steps=13 format=3 uid="uid://c178y0io7x4q"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_oqs5a"]
 [ext_resource type="PackedScene" uid="uid://c22jkjlfunchi" path="res://entities/player.tscn" id="2_mjp3b"]
@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://bjrk0hmogd0ox" path="res://entities/gj.tscn" id="5_vwbji"]
 [ext_resource type="PackedScene" uid="uid://bq0sp7d8sv2cy" path="res://entities/wasp.tscn" id="6_xuno2"]
 [ext_resource type="Script" path="res://scripts/score_label.gd" id="7_5g5tm"]
+[ext_resource type="Script" path="res://scripts/timer.gd" id="8_iceb3"]
+[ext_resource type="PackedScene" uid="uid://y2rpvndu0rtv" path="res://entities/mmvc.tscn" id="9_cj68c"]
+[ext_resource type="PackedScene" uid="uid://08xjbq2tdidf" path="res://entities/gliese.tscn" id="10_eysd7"]
+
+[sub_resource type="Theme" id="Theme_xmdbx"]
 
 [sub_resource type="Theme" id="Theme_e2h7d"]
 
@@ -115,11 +120,17 @@ scale = Vector2(0.149494, 0.101266)
 texture = ExtResource("2_u8t8o")
 
 [node name="kepler" parent="." instance=ExtResource("3_xorpa")]
-position = Vector2(984, 592)
+position = Vector2(1064, 528)
 
 [node name="gj" parent="." instance=ExtResource("5_vwbji")]
 
 [node name="wasp" parent="." instance=ExtResource("6_xuno2")]
+position = Vector2(1472, 184)
+
+[node name="mmvc" parent="." instance=ExtResource("9_cj68c")]
+
+[node name="gliese" parent="." instance=ExtResource("10_eysd7")]
+position = Vector2(480, 296)
 
 [node name="player" parent="." instance=ExtResource("2_mjp3b")]
 position = Vector2(1256, 704)
@@ -134,6 +145,7 @@ offset_left = -1256.0
 offset_top = -704.0
 offset_right = -1216.0
 offset_bottom = -664.0
+theme = SubResource("Theme_xmdbx")
 
 [node name="score_label" type="Label" parent="player/camera/UserInterface"]
 layout_mode = 0
@@ -144,3 +156,9 @@ offset_bottom = 479.0
 theme = SubResource("Theme_e2h7d")
 text = "Score : 0"
 script = ExtResource("7_5g5tm")
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 20.0
+script = ExtResource("8_iceb3")
+
+[connection signal="timeout" from="timer" to="timer" method="_on_timeout"]
