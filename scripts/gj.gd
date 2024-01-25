@@ -1,5 +1,7 @@
 extends Area2D;
 
+@export var planet_name = "gj";
+
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D;
 
 var captured : bool = false;
