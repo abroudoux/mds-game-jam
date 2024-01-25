@@ -4,27 +4,47 @@ extends TileMap
 @onready var kepler_node : Area2D = get_node("kepler");
 @onready var wasp_node : Area2D = get_node("wasp"); 
 @onready var gj_node : Area2D = get_node("gj");
-
-var score_label : Label
+@onready var mmvc_node : Area2D = get_node("mmvc");
+@onready var gliese_node : Area2D = get_node("gliese");
+@onready var titan_node : Area2D = get_node("titan");
+@onready var corot_node : Area2D = get_node("corot");
+@onready var score_label : Label = get_node("player/camera/UserInterface/score_label");
+@onready var timer : Timer = get_node("timer");
 
 func _process(_delta):
 	pass
 
 func _ready():
-	score_label = preload("res://scripts/score_label.gd").new()
-	score_label.update_score(str(50));
-	
 	player_node.connect("_on_planet_entered", _on_planet_entered);
 	player_node.connect("_on_planet_exited", _on_planet_exited);
+	kepler_node.connect("planet_captured", _on_planet_captured);
+	wasp_node.connect("planet_captured", _on_planet_captured);
+	gj_node.connect("planet_captured", _on_planet_captured);
+	mmvc_node.connect("planet_captured", _on_planet_captured);
+	gliese_node.connect("planet_captured", _on_planet_captured);
+	titan_node.connect("planet_captured", _on_planet_captured);
+	corot_node.connect("planet_captured", _on_planet_captured);
+	timer.connect("game_over", game_over);
+	
+func game_over():
+	print("GAME OVER");
 	
 func _on_planet_entered(planet_name):
 	match planet_name:
 		"kepler":
-			_on_planet_kepler_captured()
+			_on_planet_kepler_captured();
 		"wasp":
-			_on_planet_wasp_captured()
+			_on_planet_wasp_captured();
 		"gj":
-			_on_planet_gj_captured()
+			_on_planet_gj_captured();
+		"mmvc":
+			_on_planet_mmvc_captured();
+		"gliese":
+			_on_planet_gliese_captured();
+		"titan":
+			_on_planet_titan_captured();
+		"corot":
+			_on_planet_corot_captured();
 
 func _on_planet_exited(planet_name):
 	match planet_name:
@@ -34,28 +54,58 @@ func _on_planet_exited(planet_name):
 			_on_planet_wasp_exited()
 		"gj":
 			_on_planet_gj_exited()
+		"mmvc":
+			_on_planet_mmvc_exited();
+		"gliese":
+			_on_planet_gliese_exited();
+		"titan":
+			_on_planet_titan_exited();
+		"corot":
+			_on_planet_corot_exited();
 
 func _on_planet_kepler_captured():
-	print("print from _on_planet_kepler_captured")
 	kepler_node._on_capture();
 	
 func _on_planet_kepler_exited():
-	print("print from _on_planet_kepler_exited")
 	kepler_node._on_player_exited();
 	
 func _on_planet_wasp_captured():
-	print("print from _on_planet_wasp_captured")
 	wasp_node._on_capture();
 	
 func _on_planet_wasp_exited():
-	print("print from _on_planet_wasp_exited")
 	wasp_node._on_player_exited();
 	
 func _on_planet_gj_captured():
-	print("print from _on_planet_gj_captured")
 	gj_node._on_capture();
 	
 func _on_planet_gj_exited():
-	print("print from _on_planet_gj_exited")
 	gj_node._on_player_exited();
 	
+func _on_planet_mmvc_captured():
+	mmvc_node._on_capture();
+	
+func _on_planet_mmvc_exited():
+	mmvc_node._on_player_exited();
+	
+func _on_planet_gliese_captured():
+	gliese_node._on_capture();
+	
+func _on_planet_gliese_exited():
+	gliese_node._on_player_exited();
+	
+func _on_planet_titan_captured():
+	titan_node._on_capture();
+	
+func _on_planet_titan_exited():
+	titan_node._on_player_exited();
+	
+func _on_planet_corot_captured():
+	corot_node._on_capture();
+	
+func _on_planet_corot_exited():
+	corot_node._on_player_exited();
+	
+	
+	
+func _on_planet_captured():
+	score_label._on_planet_captured();

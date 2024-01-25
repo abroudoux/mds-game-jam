@@ -53,10 +53,8 @@ func _on_planet_body_entered(body):
 	if body is Area2D and "planet_name" in body:
 		var planet_name = body.planet_name
 		emit_signal("_on_planet_entered", planet_name)
-		print("Signal emitted by player entered")
 
 func _on_planet_body_exited(body):
 	if body is Area2D and "planet_name" in body:
 		var planet_name = body.planet_name
 		emit_signal("_on_planet_exited", planet_name)
-		print("Signal emitted by player exited")

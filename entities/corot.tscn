@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://ce1cr7yvtl4je"]
+
+[ext_resource type="Script" path="res://scripts/corot.gd" id="1_vr1nv"]
+[ext_resource type="Texture2D" uid="uid://pmukasipw0wh" path="res://assets/planets/corot/corot_1.png" id="1_xw4k0"]
+[ext_resource type="Texture2D" uid="uid://bmg43ykb8n4yl" path="res://assets/planets/corot/corot_2.png" id="2_5kkfn"]
+[ext_resource type="Texture2D" uid="uid://dsp8uc8u6v3h4" path="res://assets/planets/corot/corot_3.png" id="3_8myh7"]
+[ext_resource type="Texture2D" uid="uid://c2iqvrc6kua0i" path="res://assets/planets/corot/corot_4.png" id="4_5ulr5"]
+[ext_resource type="Texture2D" uid="uid://hwn7bqmpkoav" path="res://assets/planets/corot/corot_flag.png" id="5_ma0ab"]
+[ext_resource type="Texture2D" uid="uid://cqvlv1xnn5lk4" path="res://assets/planets/corot/corot.png" id="6_cvivm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nip7i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xw4k0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5kkfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8myh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5ulr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ma0ab")
+}],
+"loop": false,
+"name": &"capture",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ma0ab")
+}],
+"loop": true,
+"name": &"captured",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_cvivm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mhrrx"]
+radius = 96.3328
+
+[node name="corot" type="Area2D"]
+script = ExtResource("1_vr1nv")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_nip7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mhrrx")
