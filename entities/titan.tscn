@@ -1,30 +1,42 @@
 [gd_scene load_steps=10 format=3 uid="uid://bs3hhcs6ctrfv"]
 
 [ext_resource type="Script" path="res://scripts/titan.gd" id="1_650ua"]
-[ext_resource type="Texture2D" uid="uid://c7v88slhksyn3" path="res://assets/planets/titan/titan_1.png" id="1_b3etl"]
-[ext_resource type="Texture2D" uid="uid://bwxg0iwvkr2u6" path="res://assets/planets/titan/titan_2.png" id="2_jqefk"]
-[ext_resource type="Texture2D" uid="uid://nmqjyb05u5bo" path="res://assets/planets/titan/titan_3.png" id="3_rdicg"]
-[ext_resource type="Texture2D" uid="uid://bf6m8jusaiymf" path="res://assets/planets/titan/titan_4.png" id="4_sv54j"]
-[ext_resource type="Texture2D" uid="uid://dmi0mxf3geqge" path="res://assets/planets/titan/titan_flag.png" id="5_jefqu"]
-[ext_resource type="Texture2D" uid="uid://cxpdwkubcrktn" path="res://assets/planets/titan/titan.png" id="6_w5pue"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_11hx8"]
+load_path = "res://.godot/imported/titan_1.png-a1391d84892e40cba0542a61cee2235f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1btn7"]
+load_path = "res://.godot/imported/titan_2.png-50d2b24b55252a10364b2089d60267e3.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_65k2s"]
+load_path = "res://.godot/imported/titan_3.png-c236a02c1a2862e224a33599b086002f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qo7iq"]
+load_path = "res://.godot/imported/titan_4.png-6a13a49161889a0be6079712ef8c856b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rwj15"]
+load_path = "res://.godot/imported/titan_flag.png-47ff512ff9c0f10d1b6949ac58120231.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ei083"]
+load_path = "res://.godot/imported/titan.png-d743750e3b4cc6ad0b0c1bfac7322aba.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_73loy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_b3etl")
+"texture": SubResource("CompressedTexture2D_11hx8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_jqefk")
+"texture": SubResource("CompressedTexture2D_1btn7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_rdicg")
+"texture": SubResource("CompressedTexture2D_65k2s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_sv54j")
+"texture": SubResource("CompressedTexture2D_qo7iq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_jefqu")
+"texture": SubResource("CompressedTexture2D_rwj15")
 }],
 "loop": false,
 "name": &"capture",
@@ -32,7 +44,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_jefqu")
+"texture": SubResource("CompressedTexture2D_rwj15")
 }],
 "loop": true,
 "name": &"captured",
@@ -40,7 +52,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_w5pue")
+"texture": SubResource("CompressedTexture2D_ei083")
 }],
 "loop": true,
 "name": &"default",

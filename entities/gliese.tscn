@@ -1,30 +1,42 @@
 [gd_scene load_steps=10 format=3 uid="uid://08xjbq2tdidf"]
 
-[ext_resource type="Texture2D" uid="uid://b17bdct5euuiq" path="res://assets/planets/gliese/gliese_1.png" id="1_r1xcg"]
 [ext_resource type="Script" path="res://scripts/gliese.gd" id="1_ybh0b"]
-[ext_resource type="Texture2D" uid="uid://c8ghi0pwpaq0c" path="res://assets/planets/gliese/gliese_2.png" id="2_ea50k"]
-[ext_resource type="Texture2D" uid="uid://c1rukmv3kkn73" path="res://assets/planets/gliese/gliese_3.png" id="3_ay4hy"]
-[ext_resource type="Texture2D" uid="uid://cil6w7m4ilwxx" path="res://assets/planets/gliese/gliese_4.png" id="4_c5yvl"]
-[ext_resource type="Texture2D" uid="uid://ctw464v8bo8ki" path="res://assets/planets/gliese/gliese_flag.png" id="5_au0hi"]
-[ext_resource type="Texture2D" uid="uid://bcmgcs4qa40dy" path="res://assets/planets/gliese/gliese.png" id="6_tlk5w"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e3e0a"]
+load_path = "res://.godot/imported/gliese_1.png-d4830c6f6fcab782df4930b7464a0453.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hpnmr"]
+load_path = "res://.godot/imported/gliese_2.png-891a683240e4547ee4808488029aeee3.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_msa2v"]
+load_path = "res://.godot/imported/gliese_3.png-fdb5218ea4f5d375d798d6ceecdf1f5b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_63gyl"]
+load_path = "res://.godot/imported/gliese_4.png-62218db1763d8404ff1e993bae0b6441.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2n77b"]
+load_path = "res://.godot/imported/gliese_flag.png-01d5fc2b981cf531b348ccc9ee045ae6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nwopp"]
+load_path = "res://.godot/imported/gliese.png-cba713e9c2f14dcfe929f668beed79fe.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_no3g4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_r1xcg")
+"texture": SubResource("CompressedTexture2D_e3e0a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_ea50k")
+"texture": SubResource("CompressedTexture2D_hpnmr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ay4hy")
+"texture": SubResource("CompressedTexture2D_msa2v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_c5yvl")
+"texture": SubResource("CompressedTexture2D_63gyl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_au0hi")
+"texture": SubResource("CompressedTexture2D_2n77b")
 }],
 "loop": false,
 "name": &"capture",
@@ -32,7 +44,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_au0hi")
+"texture": SubResource("CompressedTexture2D_2n77b")
 }],
 "loop": true,
 "name": &"captured",
@@ -40,7 +52,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_tlk5w")
+"texture": SubResource("CompressedTexture2D_nwopp")
 }],
 "loop": true,
 "name": &"default",
