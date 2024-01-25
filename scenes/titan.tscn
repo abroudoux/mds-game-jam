@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bs3hhcs6ctrfv"]
+[gd_scene load_steps=11 format=3 uid="uid://bs3hhcs6ctrfv"]
 
 [ext_resource type="Script" path="res://scripts/titan.gd" id="1_650ua"]
+[ext_resource type="AudioStream" uid="uid://sk47sawlodxd" path="res://assets/audio/capture.mp3" id="2_m2wep"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_11hx8"]
 load_path = "res://.godot/imported/titan_1.png-a1391d84892e40cba0542a61cee2235f.ctex"
@@ -74,3 +75,8 @@ animation = &"capture"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_uk606")
+
+[node name="audio_stream_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_m2wep")
+volume_db = -5.0
+bus = &"capture"

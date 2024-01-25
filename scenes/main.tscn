@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c178y0io7x4q"]
+[gd_scene load_steps=20 format=3 uid="uid://c178y0io7x4q"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_oqs5a"]
 [ext_resource type="PackedScene" uid="uid://c22jkjlfunchi" path="res://scenes/player.tscn" id="2_mjp3b"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bs3hhcs6ctrfv" path="res://scenes/titan.tscn" id="11_j2v1v"]
 [ext_resource type="PackedScene" uid="uid://dr3r2mpi27kye" path="res://scenes/trappist.tscn" id="12_83euf"]
 [ext_resource type="Texture2D" uid="uid://4toywvii283v" path="res://assets/background/background-2.png" id="12_gx8cu"]
+[ext_resource type="AudioStream" uid="uid://dm3oaeqyblil7" path="res://assets/audio/theme.mp3" id="16_3lml1"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_bemli"]
 resource_local_to_scene = true
@@ -99,5 +100,9 @@ wait_time = 20.0
 one_shot = true
 autostart = true
 script = ExtResource("8_iceb3")
+
+[node name="audio_stream_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_3lml1")
+volume_db = -40.0
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

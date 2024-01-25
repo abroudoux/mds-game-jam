@@ -3,6 +3,7 @@ extends Area2D;
 @export var planet_name = "wasp";
 
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D;
+@onready var audio_stream_player : AudioStreamPlayer = get_node("audio_stream_player");
 
 var captured : bool = false;
 
@@ -20,6 +21,7 @@ func _on_capture():
 		animated_sprite.play("capture");
 		captured = true;
 		emit_signal("planet_captured");
+		audio_stream_player.play();
 	else:
 		animated_sprite.play("captured");
 
@@ -27,6 +29,7 @@ func _on_player_exited():
 	if not captured:
 		animated_sprite.stop();
 		animated_sprite.play("default");
+		audio_stream_player.stop();
 	else:
 		animated_sprite.play("captured");
 

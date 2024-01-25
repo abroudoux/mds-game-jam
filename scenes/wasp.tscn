@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bq0sp7d8sv2cy"]
+[gd_scene load_steps=11 format=3 uid="uid://bq0sp7d8sv2cy"]
 
 [ext_resource type="Script" path="res://scripts/wasp.gd" id="1_tk5dd"]
-[ext_resource type="Texture2D" uid="uid://b4ov8o4hlg4ul" path="res://assets/planets/wasp/wasp_1.png" id="2_0mdla"]
-[ext_resource type="Texture2D" uid="uid://dbxv42k4p1ojv" path="res://assets/planets/wasp/wasp_2.png" id="3_eesuo"]
-[ext_resource type="Texture2D" uid="uid://bkif1yhrm7elq" path="res://assets/planets/wasp/wasp_3.png" id="4_stfym"]
-[ext_resource type="Texture2D" uid="uid://hsa0kredaggc" path="res://assets/planets/wasp/wasp_4.png" id="5_krp02"]
-[ext_resource type="Texture2D" uid="uid://bxeifutluwl7t" path="res://assets/planets/wasp/wasp_flag.png" id="6_ds4og"]
-[ext_resource type="Texture2D" uid="uid://b23wuajw1xtjg" path="res://assets/planets/wasp/wasp.png" id="7_qsmj1"]
+[ext_resource type="Texture2D" uid="uid://vwv5jbh8vm01" path="res://assets/planets/wasp/wasp_1.png" id="2_0mdla"]
+[ext_resource type="Texture2D" uid="uid://bwck4m2cqpr7v" path="res://assets/planets/wasp/wasp_2.png" id="3_eesuo"]
+[ext_resource type="Texture2D" uid="uid://dqs3lrshxfdqs" path="res://assets/planets/wasp/wasp_3.png" id="4_stfym"]
+[ext_resource type="Texture2D" uid="uid://ch5fly8my4ach" path="res://assets/planets/wasp/wasp_4.png" id="5_krp02"]
+[ext_resource type="Texture2D" uid="uid://b205jbxwsq1uf" path="res://assets/planets/wasp/wasp_flag.png" id="6_ds4og"]
+[ext_resource type="Texture2D" uid="uid://bdw036o0m67vm" path="res://assets/planets/wasp/wasp.png" id="7_qsmj1"]
+[ext_resource type="AudioStream" uid="uid://sk47sawlodxd" path="res://assets/audio/capture.mp3" id="8_fk8wb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bs382"]
 animations = [{
@@ -62,3 +63,7 @@ animation = &"capture"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jq1xb")
+
+[node name="audio_stream_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_fk8wb")
+volume_db = -5.0

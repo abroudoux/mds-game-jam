@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dr3r2mpi27kye"]
+[gd_scene load_steps=11 format=3 uid="uid://dr3r2mpi27kye"]
 
 [ext_resource type="Texture2D" uid="uid://b7xkts6n2g4kq" path="res://assets/planets/trappist/trappist_1.png" id="1_725ag"]
 [ext_resource type="Script" path="res://scripts/trappist.gd" id="1_a3xkt"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b6nuv7o1eq6a1" path="res://assets/planets/trappist/trappist_4.png" id="4_qtqvb"]
 [ext_resource type="Texture2D" uid="uid://cxa6c4ekwpyqg" path="res://assets/planets/trappist/trappist_flag.png" id="5_kreax"]
 [ext_resource type="Texture2D" uid="uid://4dwtiq8gpia" path="res://assets/planets/trappist/trappist.png" id="6_kifg8"]
+[ext_resource type="AudioStream" uid="uid://sk47sawlodxd" path="res://assets/audio/capture.mp3" id="8_kpb7r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6ggvu"]
 animations = [{
@@ -60,3 +61,8 @@ sprite_frames = SubResource("SpriteFrames_6ggvu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fycbu")
+
+[node name="audio_stream_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_kpb7r")
+volume_db = -5.0
+bus = &"capture"

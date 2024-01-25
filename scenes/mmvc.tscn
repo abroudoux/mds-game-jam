@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://y2rpvndu0rtv"]
+[gd_scene load_steps=11 format=3 uid="uid://y2rpvndu0rtv"]
 
 [ext_resource type="Script" path="res://scripts/mmvc.gd" id="1_bfqra"]
+[ext_resource type="AudioStream" uid="uid://sk47sawlodxd" path="res://assets/audio/capture.mp3" id="2_qujtc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7v1wr"]
 load_path = "res://.godot/imported/mmvc_1.png-df167de3749fb70996a1addf9b306dce.ctex"
@@ -74,3 +75,8 @@ animation = &"capture"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_amj3x")
+
+[node name="audio_stream_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qujtc")
+volume_db = -5.0
+bus = &"capture"

@@ -13,6 +13,7 @@ extends TileMap
 @onready var trappist_node : Area2D = get_node("trappist");
 @onready var score_label : Label = get_node("player/camera/UserInterface/score_label");
 @onready var timer : Timer = get_node("timer");
+@onready var audio_stream_player : AudioStreamPlayer = get_node("audio_stream_player");
 
 func _process(_delta):
 	pass
@@ -30,6 +31,7 @@ func _ready():
 	hades_node.connect("planet_captured", _on_planet_captured);
 	lrtq_node.connect("planet_captured", _on_planet_captured);
 	trappist_node.connect("planet_captured", _on_planet_captured);
+	audio_stream_player.play();
 		
 func _on_planet_captured():
 	score_label._on_planet_captured();

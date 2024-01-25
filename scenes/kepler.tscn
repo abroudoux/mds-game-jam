@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3bkvhb81fmbm"]
+[gd_scene load_steps=11 format=3 uid="uid://b3bkvhb81fmbm"]
 
 [ext_resource type="Script" path="res://scripts/kepler.gd" id="1_d67gd"]
+[ext_resource type="AudioStream" uid="uid://sk47sawlodxd" path="res://assets/audio/capture.mp3" id="2_3tdel"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s7n2b"]
 load_path = "res://.godot/imported/kepler_1.png-866585a01946a037ee66a63ebcdafb92.ctex"
@@ -75,3 +76,8 @@ animation = &"capture"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vacpl")
+
+[node name="audio_stream_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3tdel")
+volume_db = -5.0
+bus = &"starship"

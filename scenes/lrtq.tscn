@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbb7rcx0eh6tg"]
+[gd_scene load_steps=11 format=3 uid="uid://bbb7rcx0eh6tg"]
 
 [ext_resource type="Script" path="res://scripts/lrtq.gd" id="1_5alco"]
 [ext_resource type="Texture2D" uid="uid://dm6jov72sqimw" path="res://assets/planets/lrtq/ltrq_1.png" id="1_rspww"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dvfgagjacmym7" path="res://assets/planets/lrtq/ltrq_4.png" id="4_lu8kd"]
 [ext_resource type="Texture2D" uid="uid://be2spgch1uyqd" path="res://assets/planets/lrtq/ltrq_flag.png" id="5_m0piq"]
 [ext_resource type="Texture2D" uid="uid://cjn5lncorjlxw" path="res://assets/planets/lrtq/ltrq.png" id="6_4irh0"]
+[ext_resource type="AudioStream" uid="uid://sk47sawlodxd" path="res://assets/audio/capture.mp3" id="8_inka2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7udq8"]
 animations = [{
@@ -58,6 +59,12 @@ metadata/_edit_group_ = true
 scale = Vector2(0.025, 0.025)
 sprite_frames = SubResource("SpriteFrames_7udq8")
 animation = &"capture"
+speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_p4lg7")
+
+[node name="audio_stream_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_inka2")
+volume_db = -5.0
+bus = &"capture"

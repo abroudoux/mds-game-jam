@@ -2,6 +2,8 @@ extends Area2D;
 
 @export var speed = 150;
 
+@onready var audio_stream_player : AudioStreamPlayer = get_node("audio_stream_player");
+
 var screen_size;
 var is_on_planet_kepler : bool = false
 
@@ -17,6 +19,7 @@ func _ready():
 	connect("area_entered", _on_planet_body_entered)
 	connect("area_exited", _on_planet_body_exited)
 	screen_size = get_viewport_rect().size;
+	#audio_stream_player.play();
 	
 func _process(delta):
 	var velocity = Vector2.ZERO
