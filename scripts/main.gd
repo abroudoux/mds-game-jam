@@ -30,8 +30,13 @@ func _ready():
 	hades_node.connect("planet_captured", _on_planet_captured);
 	lrtq_node.connect("planet_captured", _on_planet_captured);
 	trappist_node.connect("planet_captured", _on_planet_captured);
-	timer.connect("game_over", game_over);
-	
+		
+func _on_planet_captured():
+	score_label._on_planet_captured();
+
+func _on_timer_timeout():
+	game_over();
+
 func game_over():
 	print("GAME OVER");
 	
@@ -141,8 +146,3 @@ func _on_planet_trappist_captured():
 	
 func _on_planet_trappist_exited():
 	trappist_node._on_player_exited();
-	
-	
-	
-func _on_planet_captured():
-	score_label._on_planet_captured();

@@ -94,7 +94,10 @@ text = "Score : 0"
 script = ExtResource("7_5g5tm")
 
 [node name="timer" type="Timer" parent="."]
+process_callback = 0
 wait_time = 20.0
+one_shot = true
+autostart = true
 script = ExtResource("8_iceb3")
 
-[connection signal="timeout" from="timer" to="timer" method="_on_timeout"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
