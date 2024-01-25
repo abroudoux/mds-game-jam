@@ -1,7 +1,9 @@
 extends Area2D
 
+@onready var healthbar = $HealthBar
 @export var speed = 300
 var screen_size
+var health 
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -38,3 +40,24 @@ func _process(delta):
 	elif velocity.y != 0:
 		$AnimatedSprite2D.animation = "up"
 
+
+func _process1(delta: float) -> void:
+	$TimeRemaining.text = "%s" % roundf($FlashTimer.time_left)
+
+func _on_flash_timer_timeout() -> void:
+	toggle_icon_visibility()
+	
+func toggle_icon_visibility():
+	if $AnimatedSprite2D.visible:
+		$AnimatedSprite2D.hide()
+	else: 
+		$AnimatedSprite2D.show()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		$FlashTimer.paused() = !$FlashTimer.paused
+			
+		#toggle_icon_visibility()
+		#$FlashTimer.start()
+		
+	
