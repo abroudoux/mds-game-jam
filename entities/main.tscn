@@ -1,34 +1,125 @@
-[gd_scene load_steps=3 format=3 uid="uid://c178y0io7x4q"]
+[gd_scene load_steps=9 format=3 uid="uid://c178y0io7x4q"]
 
-[ext_resource type="Texture2D" uid="uid://d13namkmci814" path="res://assets/background/background-stars.png" id="1_pdjrt"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_oqs5a"]
 [ext_resource type="PackedScene" uid="uid://c22jkjlfunchi" path="res://entities/player.tscn" id="2_mjp3b"]
+[ext_resource type="Texture2D" uid="uid://bjhj8serd04k7" path="res://assets/background/background.png" id="2_u8t8o"]
+[ext_resource type="PackedScene" uid="uid://b3bkvhb81fmbm" path="res://entities/kepler.tscn" id="3_xorpa"]
+[ext_resource type="PackedScene" uid="uid://bjrk0hmogd0ox" path="res://entities/gj.tscn" id="5_vwbji"]
+[ext_resource type="PackedScene" uid="uid://bq0sp7d8sv2cy" path="res://entities/wasp.tscn" id="6_xuno2"]
+[ext_resource type="Script" path="res://scripts/score_label.gd" id="7_5g5tm"]
+
+[sub_resource type="Theme" id="Theme_e2h7d"]
 
 [node name="main" type="TileMap"]
 format = 2
+script = ExtResource("1_oqs5a")
 
-[node name="TextureRect4" type="TextureRect" parent="."]
-offset_left = 1256.0
-offset_top = 704.0
-offset_right = 2512.0
-offset_bottom = 1408.0
-texture = ExtResource("1_pdjrt")
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(120, -24)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
 
-[node name="TextureRect3" type="TextureRect" parent="."]
-offset_top = 704.0
-offset_right = 1256.0
-offset_bottom = 1408.0
-texture = ExtResource("1_pdjrt")
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(712, -24)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1256.0
-offset_bottom = 704.0
-texture = ExtResource("1_pdjrt")
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(1304, -24)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = 1256.0
-offset_right = 2512.0
-offset_bottom = 704.0
-texture = ExtResource("1_pdjrt")
+[node name="Background4" type="Sprite2D" parent="."]
+position = Vector2(1896, -24)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="Background5" type="Sprite2D" parent="."]
+position = Vector2(2488, -24)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="Background6" type="Sprite2D" parent="."]
+position = Vector2(120.063, 434.115)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="Background7" type="Sprite2D" parent="."]
+position = Vector2(712.063, 434.115)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="Background8" type="Sprite2D" parent="."]
+position = Vector2(1304.06, 434.115)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="Background9" type="Sprite2D" parent="."]
+position = Vector2(1896.06, 434.115)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="Background10" type="Sprite2D" parent="."]
+position = Vector2(2488.06, 434.115)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="Background11" type="Sprite2D" parent="."]
+position = Vector2(120.063, 892.115)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="Background12" type="Sprite2D" parent="."]
+position = Vector2(712.063, 892.115)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="Background13" type="Sprite2D" parent="."]
+position = Vector2(1304.06, 892.115)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="Background14" type="Sprite2D" parent="."]
+position = Vector2(1896.06, 892.115)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="Background15" type="Sprite2D" parent="."]
+position = Vector2(2488.06, 892.115)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="Background16" type="Sprite2D" parent="."]
+position = Vector2(120.063, 1350.11)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="Background17" type="Sprite2D" parent="."]
+position = Vector2(712.063, 1350.11)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="Background18" type="Sprite2D" parent="."]
+position = Vector2(1304.06, 1350.11)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="Background19" type="Sprite2D" parent="."]
+position = Vector2(1896.06, 1350.11)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="Background20" type="Sprite2D" parent="."]
+position = Vector2(2488.06, 1350.11)
+scale = Vector2(0.149494, 0.101266)
+texture = ExtResource("2_u8t8o")
+
+[node name="kepler" parent="." instance=ExtResource("3_xorpa")]
+position = Vector2(984, 592)
+
+[node name="gj" parent="." instance=ExtResource("5_vwbji")]
+
+[node name="wasp" parent="." instance=ExtResource("6_xuno2")]
 
 [node name="player" parent="." instance=ExtResource("2_mjp3b")]
 position = Vector2(1256, 704)
@@ -36,4 +127,20 @@ position = Vector2(1256, 704)
 [node name="camera" type="Camera2D" parent="player"]
 zoom = Vector2(2.5, 2.5)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="UserInterface" type="Control" parent="player/camera"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1256.0
+offset_top = -704.0
+offset_right = -1216.0
+offset_bottom = -664.0
+
+[node name="score_label" type="Label" parent="player/camera/UserInterface"]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 456.0
+offset_right = 937.0
+offset_bottom = 479.0
+theme = SubResource("Theme_e2h7d")
+text = "Score : 0"
+script = ExtResource("7_5g5tm")

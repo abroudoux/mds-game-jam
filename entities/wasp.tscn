@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://bq0sp7d8sv2cy"]
+
+[ext_resource type="Script" path="res://scripts/wasp.gd" id="1_tk5dd"]
+[ext_resource type="Texture2D" uid="uid://b4ov8o4hlg4ul" path="res://assets/planets/wasp/wasp_1.png" id="2_0mdla"]
+[ext_resource type="Texture2D" uid="uid://dbxv42k4p1ojv" path="res://assets/planets/wasp/wasp_2.png" id="3_eesuo"]
+[ext_resource type="Texture2D" uid="uid://bkif1yhrm7elq" path="res://assets/planets/wasp/wasp_3.png" id="4_stfym"]
+[ext_resource type="Texture2D" uid="uid://hsa0kredaggc" path="res://assets/planets/wasp/wasp_4.png" id="5_krp02"]
+[ext_resource type="Texture2D" uid="uid://bxeifutluwl7t" path="res://assets/planets/wasp/wasp_flag.png" id="6_ds4og"]
+[ext_resource type="Texture2D" uid="uid://b23wuajw1xtjg" path="res://assets/planets/wasp/wasp.png" id="7_qsmj1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bs382"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0mdla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eesuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_stfym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_krp02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ds4og")
+}],
+"loop": false,
+"name": &"capture",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ds4og")
+}],
+"loop": true,
+"name": &"captured",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_qsmj1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jq1xb"]
+radius = 88.3629
+
+[node name="wasp" type="Area2D"]
+position = Vector2(1440, 264)
+script = ExtResource("1_tk5dd")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_bs382")
+animation = &"capture"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jq1xb")

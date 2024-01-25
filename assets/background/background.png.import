@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgx1qodxxw2ts"
-path="res://.godot/imported/startship_green_se.png-0bc46d219738a378c1896ccd05e423ea.ctex"
+uid="uid://bjhj8serd04k7"
+path="res://.godot/imported/background.png-af8116bd94e27df8cdb7b0ec54dd4e56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rocket/startship_green_se.png"
-dest_files=["res://.godot/imported/startship_green_se.png-0bc46d219738a378c1896ccd05e423ea.ctex"]
+source_file="res://assets/background/background.png"
+dest_files=["res://.godot/imported/background.png-af8116bd94e27df8cdb7b0ec54dd4e56.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn0a15vbb6ofy"
-path="res://.godot/imported/starship_green_o.png-ff576fb343de20bf6bd845f6c0d0ec6f.ctex"
+uid="uid://dcbhvyre6ughk"
+path="res://.godot/imported/kepler_1.png-866585a01946a037ee66a63ebcdafb92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rocket/starship_green_o.png"
-dest_files=["res://.godot/imported/starship_green_o.png-ff576fb343de20bf6bd845f6c0d0ec6f.ctex"]
+source_file="res://assets/planets/kepler/kepler_1.png"
+dest_files=["res://.godot/imported/kepler_1.png-866585a01946a037ee66a63ebcdafb92.ctex"]
 
 [params]
 

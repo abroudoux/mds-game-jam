@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyhn7lktlxbkl"
-path="res://.godot/imported/starship_green_so.png-f6f1518b4ed153c1090404d10b4071b0.ctex"
+uid="uid://dwmbm0mwyarge"
+path="res://.godot/imported/gj_flag.png-62f62999a8a8b6f9e09e014a1559e097.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rocket/starship_green_so.png"
-dest_files=["res://.godot/imported/starship_green_so.png-f6f1518b4ed153c1090404d10b4071b0.ctex"]
+source_file="res://assets/planets/gj/gj_flag.png"
+dest_files=["res://.godot/imported/gj_flag.png-62f62999a8a8b6f9e09e014a1559e097.ctex"]
 
 [params]
 

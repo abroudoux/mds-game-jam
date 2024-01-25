@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://b3bkvhb81fmbm"]
+
+[ext_resource type="Texture2D" uid="uid://dcbhvyre6ughk" path="res://assets/planets/kepler/kepler_1.png" id="1_03qjb"]
+[ext_resource type="Script" path="res://scripts/kepler.gd" id="1_d67gd"]
+[ext_resource type="Texture2D" uid="uid://bgwfxw4vju8qa" path="res://assets/planets/kepler/kepler_2.png" id="2_mwaed"]
+[ext_resource type="Texture2D" uid="uid://53udje04p4e2" path="res://assets/planets/kepler/kepler_3.png" id="3_7sivm"]
+[ext_resource type="Texture2D" uid="uid://5wd6t8st4r0c" path="res://assets/planets/kepler/kepler_4.png" id="4_ega7j"]
+[ext_resource type="Texture2D" uid="uid://dw67mmq5tllqc" path="res://assets/planets/kepler/kepler.png" id="5_0r6ll"]
+[ext_resource type="Texture2D" uid="uid://cbv4lga1ygsee" path="res://assets/planets/kepler/kepler_flag.png" id="6_sdim6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f4nxv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_03qjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mwaed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7sivm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ega7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sdim6")
+}],
+"loop": false,
+"name": &"capture",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_sdim6")
+}],
+"loop": true,
+"name": &"captured",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0r6ll")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vacpl"]
+radius = 104.0
+
+[node name="kepler" type="Area2D"]
+position = Vector2(264, 136)
+collision_mask = 0
+script = ExtResource("1_d67gd")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_f4nxv")
+animation = &"capture"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vacpl")
