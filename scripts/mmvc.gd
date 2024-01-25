@@ -32,3 +32,7 @@ func _on_player_exited():
 		audio_stream_player.stop();
 	else:
 		animated_sprite.play("captured");
+
+func reset_animation():
+	captured = false;
+	animated_sprite.play("default");

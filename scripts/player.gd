@@ -1,6 +1,6 @@
 extends Area2D;
 
-@export var speed = 150;
+@export var speed = 100;
 
 @onready var audio_stream_player : AudioStreamPlayer = get_node("audio_stream_player");
 

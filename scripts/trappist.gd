@@ -33,3 +33,7 @@ func _on_player_exited():
 	else:
 		animated_sprite.play("captured");
 
+func reset_animation():
+	captured = false;
+	animated_sprite.play("default");
+

@@ -15,12 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://bs3hhcs6ctrfv" path="res://scenes/titan.tscn" id="11_j2v1v"]
 [ext_resource type="PackedScene" uid="uid://dr3r2mpi27kye" path="res://scenes/trappist.tscn" id="12_83euf"]
 [ext_resource type="Texture2D" uid="uid://4toywvii283v" path="res://assets/background/background-2.png" id="12_gx8cu"]
+[ext_resource type="Script" path="res://scripts/restart_label.gd" id="15_nos1k"]
 [ext_resource type="AudioStream" uid="uid://dm3oaeqyblil7" path="res://assets/audio/theme.mp3" id="16_3lml1"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_bemli"]
 resource_local_to_scene = true
-
-[sub_resource type="Theme" id="Theme_xmdbx"]
 
 [sub_resource type="Theme" id="Theme_e2h7d"]
 
@@ -75,24 +74,50 @@ position = Vector2(1256, 704)
 [node name="camera" type="Camera2D" parent="player"]
 zoom = Vector2(4, 4)
 
-[node name="UserInterface" type="Control" parent="player/camera"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -1256.0
-offset_top = -704.0
-offset_right = 784.0
-offset_bottom = 608.0
-theme = SubResource("Theme_xmdbx")
-
-[node name="score_label" type="Label" parent="player/camera/UserInterface"]
-layout_mode = 0
-offset_left = 1024.0
-offset_top = 552.0
-offset_right = 1089.0
-offset_bottom = 576.0
+[node name="score_label" type="Label" parent="player/camera"]
+offset_left = -245.0
+offset_top = -155.0
+offset_right = 265.0
+offset_bottom = 170.0
 theme = SubResource("Theme_e2h7d")
 text = "Score : 0"
 script = ExtResource("7_5g5tm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="player/camera"]
+
+[node name="game_over_label" type="Label" parent="player/camera/CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.0
+offset_top = -162.5
+offset_right = 255.0
+offset_bottom = 162.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="restart_label" type="Label" parent="player/camera/CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 152.0
+offset_right = 100.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Click here to restart game"
+script = ExtResource("15_nos1k")
 
 [node name="timer" type="Timer" parent="."]
 process_callback = 0
