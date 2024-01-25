@@ -26,9 +26,17 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_ds4og")
 }],
-"loop": true,
+"loop": false,
 "name": &"capture",
-"speed": 3.0
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ds4og")
+}],
+"loop": true,
+"name": &"captured",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -50,8 +58,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_bs382")
-animation = &"capture"
-frame = 4
+animation = &"captured"
 speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

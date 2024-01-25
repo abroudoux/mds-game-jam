@@ -1,13 +1,27 @@
-extends Area2D
+extends Area2D;
 
-@onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D;
 
-func _ready():
+var captured : bool = false;
+
+func _ready():	
 	if animated_sprite:
 		animated_sprite.play("default");
 
 func _process(_delta):
-	pass
+	pass;
 
 func _on_capture():
-	animated_sprite.play("capture");
+	if not captured:
+		animated_sprite.play("capture");
+		captured = true;
+	else:
+		animated_sprite.play("captured");
+
+func _on_player_exited():
+	if not captured:
+		animated_sprite.stop();
+		animated_sprite.play("default");
+	else:
+		animated_sprite.play("captured");
+

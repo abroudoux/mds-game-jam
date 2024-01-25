@@ -15,14 +15,27 @@ func _ready():
 	score_label.update_score(str(50));
 	
 	player_node.planet_kepler_body_entered.connect(_on_planet_kepler_captured);
-	#player_node.planet_body_entered.connect( _on_planet_wasp_captured);
-	#player_node.planet_body_entered.connect( _on_planet_gj_captured);
+	player_node.planet_kepler_body_exited.connect(_on_planet_kepler_exited);
+	player_node.planet_wasp_body_entered.connect(_on_planet_wasp_captured);
+	player_node.planet_wasp_body_exited.connect(_on_planet_wasp_exited);
+	player_node.planet_gj_body_entered.connect(_on_planet_gj_captured);
+	player_node.planet_gj_body_exited.connect(_on_planet_gj_exited);
 
 func _on_planet_kepler_captured():
 	kepler_node._on_capture();
-
+	
+func _on_planet_kepler_exited():
+	kepler_node._on_player_exited();
+	
 func _on_planet_wasp_captured():
 	wasp_node._on_capture();
 	
+func _on_planet_wasp_exited():
+	wasp_node._on_player_exited();
+	
 func _on_planet_gj_captured():
 	gj_node._on_capture();
+	
+func _on_planet_gj_exited():
+	gj_node._on_player_exited();
+	
