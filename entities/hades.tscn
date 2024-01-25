@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://bmy6n5a6pv2ar"]
+
+[ext_resource type="Texture2D" uid="uid://bg8kh6no1n40e" path="res://assets/planets/hades/hades_1.png" id="1_dfobx"]
+[ext_resource type="Texture2D" uid="uid://4fcdemv5kt1p" path="res://assets/planets/hades/hades.png" id="1_exmwt"]
+[ext_resource type="Script" path="res://scripts/hades.gd" id="1_xamkn"]
+[ext_resource type="Texture2D" uid="uid://ca4p2qivhl2ld" path="res://assets/planets/hades/hades_2.png" id="2_m5nu8"]
+[ext_resource type="Texture2D" uid="uid://dqadt2cpn355p" path="res://assets/planets/hades/hades_3.png" id="3_75jb1"]
+[ext_resource type="Texture2D" uid="uid://ct80xwgidyvvk" path="res://assets/planets/hades/hades_4.png" id="4_7wu46"]
+[ext_resource type="Texture2D" uid="uid://m8ro64taa66n" path="res://assets/planets/hades/hades_flag.png" id="5_kf70o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6wy8u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dfobx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m5nu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_75jb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7wu46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kf70o")
+}],
+"loop": false,
+"name": &"capture",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_kf70o")
+}],
+"loop": true,
+"name": &"captured",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_exmwt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uayun"]
+radius = 97.3242
+
+[node name="hades" type="Area2D"]
+script = ExtResource("1_xamkn")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_6wy8u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uayun")
