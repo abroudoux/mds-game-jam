@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://y2rpvndu0rtv"]
+
+[ext_resource type="Script" path="res://scripts/mmvc.gd" id="1_bfqra"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7v1wr"]
+load_path = "res://.godot/imported/mmvc_1.png-df167de3749fb70996a1addf9b306dce.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t74n1"]
+load_path = "res://.godot/imported/mmvc_2.png-0d4e57a0e10adf2d98be73ccf5ed4afa.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v8cv3"]
+load_path = "res://.godot/imported/mmvc_3.png-01eecf6ecb4b95ba5f951e2aa9a1de0c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rerug"]
+load_path = "res://.godot/imported/mmvc_4.png-864ecd35a92d21d6b87e369a64119d23.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6dstj"]
+load_path = "res://.godot/imported/mmvc_flag.png-66949f8c3701ea9aed3fe7479927f75c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oxoij"]
+load_path = "res://.godot/imported/mmvc.png-987ff34d59638963f3d57c5e7298b3bb.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kjclq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_7v1wr")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_t74n1")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_v8cv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_rerug")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_6dstj")
+}],
+"loop": false,
+"name": &"capture",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_6dstj")
+}],
+"loop": true,
+"name": &"captured",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_oxoij")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_amj3x"]
+radius = 48.0
+
+[node name="mmvc" type="Area2D"]
+position = Vector2(1752, 960)
+script = ExtResource("1_bfqra")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.025, 0.025)
+sprite_frames = SubResource("SpriteFrames_kjclq")
+animation = &"capture"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_amj3x")

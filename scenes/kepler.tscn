@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://b3bkvhb81fmbm"]
+
+[ext_resource type="Script" path="res://scripts/kepler.gd" id="1_d67gd"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s7n2b"]
+load_path = "res://.godot/imported/kepler_1.png-866585a01946a037ee66a63ebcdafb92.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sontb"]
+load_path = "res://.godot/imported/kepler_2.png-7e36d8bf814e012642f68f01a2275ae6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n3e5s"]
+load_path = "res://.godot/imported/kepler_3.png-661ffbebd8cd9e7638f917c0de5e81e0.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7kftu"]
+load_path = "res://.godot/imported/kepler_4.png-e7d08f3299ffc662be22e2faf6024710.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ne32a"]
+load_path = "res://.godot/imported/kepler_flag.png-5908db8d4735ac451ad05de672e64628.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qrrte"]
+load_path = "res://.godot/imported/kepler.png-b55f5fc5d2c2d8ef38e737b6cdcebaab.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f4nxv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_s7n2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_sontb")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_n3e5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_7kftu")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_ne32a")
+}],
+"loop": false,
+"name": &"capture",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_ne32a")
+}],
+"loop": true,
+"name": &"captured",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_qrrte")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vacpl"]
+radius = 48.0
+
+[node name="kepler" type="Area2D"]
+position = Vector2(264, 136)
+collision_mask = 0
+script = ExtResource("1_d67gd")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.025, 0.025)
+sprite_frames = SubResource("SpriteFrames_f4nxv")
+animation = &"capture"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vacpl")

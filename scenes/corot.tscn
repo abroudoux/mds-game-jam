@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://ce1cr7yvtl4je"]
+
+[ext_resource type="Script" path="res://scripts/corot.gd" id="1_vr1nv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gctec"]
+load_path = "res://.godot/imported/corot_1.png-43b2476f6862392c1c3da4e8149717c0.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3kmic"]
+load_path = "res://.godot/imported/corot_2.png-08e2bbe12addf2b30c66c8321afd18b8.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_km1hy"]
+load_path = "res://.godot/imported/corot_3.png-38ffbcab7d56ef9328bc10083781f4cf.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g8aly"]
+load_path = "res://.godot/imported/corot_4.png-38d332d236c66c97c50739a600625d9d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_udk3i"]
+load_path = "res://.godot/imported/corot_flag.png-76a79d897006c6b007240ec4b2cecb7d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_36krh"]
+load_path = "res://.godot/imported/corot.png-f1cb5603f7cf2d329402d62fe458203a.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nip7i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_gctec")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_3kmic")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_km1hy")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_g8aly")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_udk3i")
+}],
+"loop": false,
+"name": &"capture",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_udk3i")
+}],
+"loop": true,
+"name": &"captured",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_36krh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mhrrx"]
+radius = 56.0
+
+[node name="corot" type="Area2D"]
+script = ExtResource("1_vr1nv")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.025, 0.025)
+sprite_frames = SubResource("SpriteFrames_nip7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mhrrx")
