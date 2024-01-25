@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c178y0io7x4q"]
+[gd_scene load_steps=18 format=3 uid="uid://c178y0io7x4q"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_oqs5a"]
 [ext_resource type="PackedScene" uid="uid://c22jkjlfunchi" path="res://entities/player.tscn" id="2_mjp3b"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ce1cr7yvtl4je" path="res://entities/corot.tscn" id="9_s2l87"]
 [ext_resource type="PackedScene" uid="uid://08xjbq2tdidf" path="res://entities/gliese.tscn" id="10_eysd7"]
 [ext_resource type="PackedScene" uid="uid://bmy6n5a6pv2ar" path="res://entities/hades.tscn" id="10_whux1"]
+[ext_resource type="PackedScene" uid="uid://bbb7rcx0eh6tg" path="res://entities/lrtq.tscn" id="11_eu6ju"]
 [ext_resource type="PackedScene" uid="uid://bs3hhcs6ctrfv" path="res://entities/titan.tscn" id="11_j2v1v"]
 [ext_resource type="Texture2D" uid="uid://4toywvii283v" path="res://assets/background/background-2.png" id="12_gx8cu"]
 
@@ -59,6 +60,8 @@ position = Vector2(120, 104)
 
 [node name="hades" parent="." instance=ExtResource("10_whux1")]
 position = Vector2(664, 744)
+
+[node name="lrtq" parent="." instance=ExtResource("11_eu6ju")]
 
 [node name="player" parent="." instance=ExtResource("2_mjp3b")]
 position = Vector2(1256, 704)

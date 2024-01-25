@@ -8,7 +8,8 @@ extends TileMap
 @onready var gliese_node : Area2D = get_node("gliese");
 @onready var titan_node : Area2D = get_node("titan");
 @onready var corot_node : Area2D = get_node("corot");
-@onready var hader_node : Area2D = get_node("hader");
+@onready var hades_node : Area2D = get_node("hades");
+@onready var lrtq_node : Area2D = get_node("lrtq");
 @onready var score_label : Label = get_node("player/camera/UserInterface/score_label");
 @onready var timer : Timer = get_node("timer");
 
@@ -26,6 +27,7 @@ func _ready():
 	titan_node.connect("planet_captured", _on_planet_captured);
 	corot_node.connect("planet_captured", _on_planet_captured);
 	hades_node.connect("planet_captured", _on_planet_captured);
+	lrtq_node.connect("planet_captured", _on_planet_captured);
 	timer.connect("game_over", game_over);
 	
 func game_over():
@@ -49,6 +51,8 @@ func _on_planet_entered(planet_name):
 			_on_planet_corot_captured();
 		"hades":
 			_on_planet_hades_captured();
+		"lrtq":
+			_on_planet_lrtq_captured();
 
 func _on_planet_exited(planet_name):
 	match planet_name:
@@ -68,6 +72,8 @@ func _on_planet_exited(planet_name):
 			_on_planet_corot_exited();
 		"hades":
 			_on_planet_hades_exited();
+		"lrtq":
+			_on_planet_lrtq_exited();
 
 func _on_planet_kepler_captured():
 	kepler_node._on_capture();
@@ -116,6 +122,12 @@ func _on_planet_hades_captured():
 	
 func _on_planet_hades_exited():
 	hades_node._on_player_exited();
+	
+func _on_planet_lrtq_captured():
+	lrtq_node._on_capture();
+	
+func _on_planet_lrtq_exited():
+	lrtq_node._on_player_exited();
 	
 	
 	
