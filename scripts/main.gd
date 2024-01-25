@@ -6,6 +6,7 @@ extends TileMap
 @onready var gj_node : Area2D = get_node("gj");
 @onready var mmvc_node : Area2D = get_node("mmvc");
 @onready var gliese_node : Area2D = get_node("gliese");
+@onready var titan_node : Area2D = get_node("titan");
 @onready var score_label : Label = get_node("player/camera/UserInterface/score_label");
 @onready var timer : Timer = get_node("timer");
 
@@ -20,6 +21,7 @@ func _ready():
 	gj_node.connect("planet_captured", _on_planet_captured);
 	mmvc_node.connect("planet_captured", _on_planet_captured);
 	gliese_node.connect("planet_captured", _on_planet_captured);
+	titan_node.connect("planet_captured", _on_planet_captured)
 	timer.connect("game_over", game_over);
 	
 func game_over():
@@ -37,6 +39,8 @@ func _on_planet_entered(planet_name):
 			_on_planet_mmvc_captured();
 		"gliese":
 			_on_planet_gliese_captured();
+		"titan":
+			_on_planet_titan_captured();
 
 func _on_planet_exited(planet_name):
 	match planet_name:
@@ -50,6 +54,8 @@ func _on_planet_exited(planet_name):
 			_on_planet_mmvc_captured();
 		"gliese":
 			_on_planet_gliese_captured();
+		"titan":
+			_on_planet_titan_captured();
 
 func _on_planet_kepler_captured():
 	kepler_node._on_capture();
@@ -80,6 +86,12 @@ func _on_planet_gliese_captured():
 	
 func _on_planet_gliese_exited():
 	gliese_node._on_player_exited();
+	
+func _on_planet_titan_captured():
+	titan_node._on_capture();
+	
+func _on_planet_titan_exited():
+	titan_node._on_player_exited();
 	
 	
 	
