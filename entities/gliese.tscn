@@ -48,7 +48,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jghml"]
-radius = 186.762
+radius = 96.0
 
 [node name="gliese" type="Area2D"]
 position = Vector2(1656, 296)
@@ -56,9 +56,8 @@ script = ExtResource("1_ybh0b")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_no3g4")
-animation = &"captured"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jghml")

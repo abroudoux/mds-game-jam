@@ -48,7 +48,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vacpl"]
-radius = 104.0
+radius = 48.0
 
 [node name="kepler" type="Area2D"]
 position = Vector2(264, 136)
@@ -57,7 +57,7 @@ script = ExtResource("1_d67gd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.025, 0.025)
 sprite_frames = SubResource("SpriteFrames_f4nxv")
 animation = &"capture"
 

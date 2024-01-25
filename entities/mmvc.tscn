@@ -48,7 +48,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_amj3x"]
-radius = 104.307
+radius = 48.0
 
 [node name="mmvc" type="Area2D"]
 position = Vector2(1752, 960)
@@ -56,7 +56,7 @@ script = ExtResource("1_bfqra")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.025, 0.025)
 sprite_frames = SubResource("SpriteFrames_kjclq")
 animation = &"capture"
 

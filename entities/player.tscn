@@ -77,19 +77,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g31ny"]
-radius = 17.0
-height = 36.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_wpurl"]
+radius = 7.0
 
 [node name="player" type="Area2D" groups=["player"]]
 script = ExtResource("1_ta2re")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.01, 0.01)
+scale = Vector2(0.005, 0.005)
 sprite_frames = SubResource("SpriteFrames_v5duu")
-animation = &"down_right"
+animation = &"up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_g31ny")
+shape = SubResource("CircleShape2D_wpurl")

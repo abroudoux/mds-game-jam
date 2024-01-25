@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c178y0io7x4q"]
+[gd_scene load_steps=16 format=3 uid="uid://c178y0io7x4q"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_oqs5a"]
 [ext_resource type="PackedScene" uid="uid://c22jkjlfunchi" path="res://entities/player.tscn" id="2_mjp3b"]
@@ -11,34 +11,47 @@
 [ext_resource type="PackedScene" uid="uid://ce1cr7yvtl4je" path="res://entities/corot.tscn" id="9_s2l87"]
 [ext_resource type="PackedScene" uid="uid://08xjbq2tdidf" path="res://entities/gliese.tscn" id="10_eysd7"]
 [ext_resource type="PackedScene" uid="uid://bs3hhcs6ctrfv" path="res://entities/titan.tscn" id="11_j2v1v"]
+[ext_resource type="Texture2D" uid="uid://4toywvii283v" path="res://assets/background/background-2.png" id="12_gx8cu"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_bemli"]
+resource_local_to_scene = true
 
 [sub_resource type="Theme" id="Theme_xmdbx"]
 
 [sub_resource type="Theme" id="Theme_e2h7d"]
 
-[sub_resource type="ImageTexture" id="ImageTexture_5w8nt"]
-
 [node name="main" type="TileMap"]
 format = 2
 script = ExtResource("1_oqs5a")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("ImageTexture_bemli")
+
+[node name="Background-2" type="Sprite2D" parent="TextureRect"]
+modulate = Color(0.4, 0.4, 0.4, 1)
+position = Vector2(1112, 728)
+scale = Vector2(0.805913, 0.805913)
+texture = ExtResource("12_gx8cu")
+
 [node name="kepler" parent="." instance=ExtResource("3_xorpa")]
-position = Vector2(1040, 456)
+position = Vector2(1032, 400)
 
 [node name="gj" parent="." instance=ExtResource("5_vwbji")]
-position = Vector2(1104, 1080)
+position = Vector2(808, 1096)
 
 [node name="wasp" parent="." instance=ExtResource("6_xuno2")]
-position = Vector2(1472, 184)
+position = Vector2(1696, 200)
 
 [node name="mmvc" parent="." instance=ExtResource("9_cj68c")]
-position = Vector2(240, 872)
+position = Vector2(216, 736)
 
 [node name="gliese" parent="." instance=ExtResource("10_eysd7")]
-position = Vector2(480, 296)
+position = Vector2(552, 208)
 
 [node name="titan" parent="." instance=ExtResource("11_j2v1v")]
-position = Vector2(1720, 968)
+position = Vector2(1720, 1024)
 
 [node name="corot" parent="." instance=ExtResource("9_s2l87")]
 position = Vector2(120, 104)
@@ -47,23 +60,23 @@ position = Vector2(120, 104)
 position = Vector2(1256, 704)
 
 [node name="camera" type="Camera2D" parent="player"]
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(4, 4)
 
 [node name="UserInterface" type="Control" parent="player/camera"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -1256.0
 offset_top = -704.0
-offset_right = -1216.0
-offset_bottom = -664.0
+offset_right = 784.0
+offset_bottom = 608.0
 theme = SubResource("Theme_xmdbx")
 
 [node name="score_label" type="Label" parent="player/camera/UserInterface"]
 layout_mode = 0
-offset_left = 872.0
-offset_top = 456.0
-offset_right = 937.0
-offset_bottom = 479.0
+offset_left = 1024.0
+offset_top = 552.0
+offset_right = 1089.0
+offset_bottom = 576.0
 theme = SubResource("Theme_e2h7d")
 text = "Score : 0"
 script = ExtResource("7_5g5tm")
@@ -71,12 +84,5 @@ script = ExtResource("7_5g5tm")
 [node name="timer" type="Timer" parent="."]
 wait_time = 20.0
 script = ExtResource("8_iceb3")
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = SubResource("ImageTexture_5w8nt")
 
 [connection signal="timeout" from="timer" to="timer" method="_on_timeout"]
