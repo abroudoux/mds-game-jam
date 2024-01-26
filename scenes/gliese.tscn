@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://08xjbq2tdidf"]
+[gd_scene load_steps=11 format=3 uid="uid://08xjbq2tdidf"]
 
 [ext_resource type="Script" path="res://scripts/gliese.gd" id="1_ybh0b"]
+[ext_resource type="AudioStream" uid="uid://sk47sawlodxd" path="res://assets/audio/capture.mp3" id="2_vg6l1"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e3e0a"]
 load_path = "res://.godot/imported/gliese_1.png-d4830c6f6fcab782df4930b7464a0453.ctex"
@@ -73,3 +74,8 @@ sprite_frames = SubResource("SpriteFrames_no3g4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jghml")
+
+[node name="audio_stream_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vg6l1")
+volume_db = -5.0
+bus = &"capture"

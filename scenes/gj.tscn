@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjrk0hmogd0ox"]
+[gd_scene load_steps=11 format=3 uid="uid://bjrk0hmogd0ox"]
 
 [ext_resource type="Script" path="res://scripts/gj.gd" id="1_rq6qk"]
+[ext_resource type="AudioStream" uid="uid://sk47sawlodxd" path="res://assets/audio/capture.mp3" id="2_u41gx"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lrpbo"]
 load_path = "res://.godot/imported/gj_1.png-040a895e46ccdc431572ec696db4f339.ctex"
@@ -74,3 +75,8 @@ animation = &"capture"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vy53r")
+
+[node name="audio_stream_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_u41gx")
+volume_db = -5.0
+bus = &"capture"

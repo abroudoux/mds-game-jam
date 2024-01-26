@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c22jkjlfunchi"]
+[gd_scene load_steps=13 format=3 uid="uid://c22jkjlfunchi"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ta2re"]
 [ext_resource type="Texture2D" uid="uid://dxb6xx0jvhoa4" path="res://assets/rocket/starship_down.png" id="2_yd3xp"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cyfcml4fbusop" path="res://assets/rocket/starship_up.png" id="7_tpnwx"]
 [ext_resource type="Texture2D" uid="uid://cv4cqt88pox2c" path="res://assets/rocket/starship_up_left.png" id="8_cywoq"]
 [ext_resource type="Texture2D" uid="uid://bcqk3g3w26lil" path="res://assets/rocket/starship_up_right.png" id="9_td8mm"]
+[ext_resource type="AudioStream" uid="uid://cx0cat40gdy3c" path="res://assets/audio/starship.mp3" id="10_2wxi6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v5duu"]
 animations = [{
@@ -92,3 +93,8 @@ animation = &"up"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CircleShape2D_wpurl")
+
+[node name="audio_stream_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_2wxi6")
+volume_db = -10.0
+bus = &"starship"

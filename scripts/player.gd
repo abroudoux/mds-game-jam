@@ -1,22 +1,23 @@
 extends Area2D;
 
-@export var speed = 150;
+@export var speed = 100;
 
-var screen_size;
+@onready var audio_stream_player : AudioStreamPlayer = get_node("audio_stream_player");
+
 var is_on_planet_kepler : bool = false
+var screen_size;
 
 signal _on_planet_entered(planet_name)
 signal _on_planet_exited(planet_name)
 
 func start(pos):
-	position = pos;
+	var position = Vector2(screen_size.x / 2, screen_size.y / 2)
 	show();
-	#$CollisionShape2D.disabled = false;
 
 func _ready():
 	connect("area_entered", _on_planet_body_entered)
 	connect("area_exited", _on_planet_body_exited)
-	screen_size = get_viewport_rect().size;
+	screen_size = get_viewport_rect().size
 	
 func _process(delta):
 	var velocity = Vector2.ZERO

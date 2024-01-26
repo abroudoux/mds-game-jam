@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmy6n5a6pv2ar"]
+[gd_scene load_steps=11 format=3 uid="uid://bmy6n5a6pv2ar"]
 
 [ext_resource type="Texture2D" uid="uid://bg8kh6no1n40e" path="res://assets/planets/hades/hades_1.png" id="1_dfobx"]
 [ext_resource type="Texture2D" uid="uid://4fcdemv5kt1p" path="res://assets/planets/hades/hades.png" id="1_exmwt"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dqadt2cpn355p" path="res://assets/planets/hades/hades_3.png" id="3_75jb1"]
 [ext_resource type="Texture2D" uid="uid://ct80xwgidyvvk" path="res://assets/planets/hades/hades_4.png" id="4_7wu46"]
 [ext_resource type="Texture2D" uid="uid://m8ro64taa66n" path="res://assets/planets/hades/hades_flag.png" id="5_kf70o"]
+[ext_resource type="AudioStream" uid="uid://sk47sawlodxd" path="res://assets/audio/capture.mp3" id="8_wgyyo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6wy8u"]
 animations = [{
@@ -60,3 +61,8 @@ sprite_frames = SubResource("SpriteFrames_6wy8u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_uayun")
+
+[node name="audio_stream_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_wgyyo")
+volume_db = -5.0
+bus = &"capture"
