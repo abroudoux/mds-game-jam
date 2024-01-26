@@ -12,15 +12,13 @@ extends TileMap
 @onready var lrtq_node : Area2D = get_node("lrtq");
 @onready var trappist_node : Area2D = get_node("trappist");
 @onready var score_label : Label = get_node("player/camera/score_label");
+@onready var timer_label : Label = get_node("player/camera/CanvasLayer/timer_label");
 @onready var timer : Timer = get_node("timer");
 @onready var audio_stream_player : AudioStreamPlayer = get_node("audio_stream_player");
 @onready var game_over_label : Label = get_node("player/camera/CanvasLayer/game_over_label");
 @onready var restart_game_label : Label = get_node("player/camera/CanvasLayer/restart_label");
 
 var game_over = false;
-
-func _process(_delta):
-	pass
 
 func _ready():
 	audio_stream_player.play();
@@ -50,8 +48,14 @@ func _ready():
 		hades_node.connect("planet_captured", _on_planet_captured);
 		lrtq_node.connect("planet_captured", _on_planet_captured);
 		trappist_node.connect("planet_captured", _on_planet_captured);
+		timer.connect("timeout", _on_timer_timeout)
 		game_over_label.hide();
 		restart_game_label.hide();
+		timer_label.show();    
+		timer.start()
+
+func _process(_delta):
+	timer_label.text = "Oxygène restant : " + str(int(timer.time_left))
 		
 func restart():
 	game_over = false;
@@ -82,10 +86,11 @@ func _on_timer_timeout():
 	mmvc_node.hide();
 	gliese_node.hide();
 	titan_node.hide();
-	corot_node.hide();
+	corot_node.hide(); 
 	hades_node.hide();
 	lrtq_node.hide();
 	trappist_node.hide();
+	timer_label.hide();
 	game_over_label.show();
 	restart_game_label.show();
 	

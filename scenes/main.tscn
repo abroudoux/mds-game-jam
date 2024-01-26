@@ -119,6 +119,20 @@ size_flags_horizontal = 4
 text = "Click here to restart game"
 script = ExtResource("15_nos1k")
 
+[node name="timer_label" type="Label" parent="player/camera/CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -296.0
+offset_right = 112.0
+offset_bottom = -273.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Temps d'oxygène restant : 0s"
+
 [node name="timer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 20.0
