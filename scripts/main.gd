@@ -51,11 +51,11 @@ func _ready():
 		timer.connect("timeout", _on_timer_timeout)
 		game_over_label.hide();
 		restart_game_label.hide();
-		timer_label.show();    
+		timer_label.show();
 		timer.start()
 
 func _process(_delta):
-	timer_label.text = "Oxygène restant : " + str(int(timer.time_left))
+	timer_label.text = "Oxygène restant : " + str(int(timer.time_left)) + " secondes"
 		
 func restart():
 	game_over = false;
@@ -76,6 +76,8 @@ func restart():
 		
 func _on_planet_captured():
 	score_label._on_planet_captured();
+	timer.add_time(5.0);
+	timer._process(0)
 
 func _on_timer_timeout():
 	game_over = true;
